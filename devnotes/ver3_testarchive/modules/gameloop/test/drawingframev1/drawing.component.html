@@ -1,0 +1,32 @@
+<div class="flex-container mx-auto">
+  <div class="text-center">
+    <h4>welcome to the drawing test component</h4>
+    <div style="width: 60%" id="default-board"></div>
+    <br/>
+    <button class="btn btn-primary-outline" (click)="submitDrawing()">Submit</button>
+    <br/><br/>
+    <br/><br/>
+  </div>
+  <div class="row">
+    <div class="col-s-4" *ngIf="setupEmojiList">
+      <ul>
+          <li *ngFor="let icon of emojis" >
+            <img [id]="icon.id" class="emoji" draggable=true [alt]="icon.alt" [src]="icon?.dataUrl"  (dragstart)="dragstart($event)">
+          </li>
+      </ul>
+    </div>
+    <div style="padding-left: 10%" id="resizer">
+      <div id="resizeSpan" (drop)="divDropHandler($event)" (dragover)="allowDrop($event)">
+        drop imges to be resized inside of here...
+      </div>
+      <div>
+        <input (change)="sliderChanged($event)" id="resize-slider" type="range" [value]="sliderValue" min="-100" max="100">
+      </div>
+    </div>
+    <div>
+      <div id="imgQueue" (drop)="queueDropHandler($event)" (dragover)="allowDrop($event)">
+        image queue
+      </div>
+    </div>
+  </div>
+</div>

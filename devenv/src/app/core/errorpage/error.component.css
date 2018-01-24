@@ -1,0 +1,39 @@
+.table {
+    color: white;
+}
+
+.table a {
+    color: rgba(77, 154, 219, 1);
+}
+
+h1 {
+    font-size: 2.5em;
+    font-family: Kalam;
+    text-align: center;
+    padding-bottom: 20px;
+    color: white;
+    animation-delay: .3s;
+    animation-timing-function: ease;
+    white-space: nowrap;
+}
+
+p {
+    font-size: 1em;
+    font-family: kalam;
+    
+    color: white;
+}
+
+/*ERROR PAGE MEDIA QUERIES
+@media screen and (max-width: 960px) {
+    .card {
+        height: 70vh;
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    p {
+        text-align: left;
+        text-justify: distribute;
+    }
+}*/

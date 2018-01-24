@@ -1,0 +1,99 @@
+
+solutions:
+
+    - on refresh or init, 
+        -> validate streamuser
+        -> submit rebuild request
+            -> if rebuild exists
+    - on reset functions (server)
+        -> validate streamuser
+            -> rebuild user
+    - on presence changed (server)
+        -> presence changed online should never 
+        occur if the streamuser is not already 
+        validated client side and a rebuild 
+        request is was submitted and processed.
+        
+        -> validate streamuser
+            -> rebuild user
+        -> validate game 
+            -> error out game 
+   
+
+session factory 
+    -> subscribe events broker: init game session
+        -> broadcast game session reset
+        -> broadcast reset all session subscriptions 
+        -> set request timeout
+        -> return request user 
+        -> return validated user
+        -> broadcast new presence subscription 
+        -> close modals
+        -> broadcast new stream user -> game session takes over
+        
+    -> subscribe events broker: refresh game session
+        -> broadcast game session reset 
+        -> broadcast reset user status subscription
+        -> set request timeout
+        -> return request user 
+        -> return validated user
+        -> close modals
+        -> broadcast new stream user -> game session takes over
+
+    -> request user 
+        -> make request
+        -> clear timeout
+        -> if empty return request new user
+
+    -> request new user 
+        -> set request timeout
+        -> make request
+        -> clear timeout
+        -> return user/error
+
+    -> validate user 
+        -> if bad
+            -> set request timeout
+            -> request rebuild
+            -> read new user
+            -> clear timeout
+            -> revalidate 
+            -> if fail -> error
+            -> return user
+        -> else return user
+
+    -> on request timeout 
+        -> close modals
+        -> modal error -> landing page.
+
+
+session managment bootstrap
+    - bootstrap the events broker, subscriptions manager, and redirect queue manager
+
+
+server side errors
+
+    -> caught 
+        -> set game status to error 
+            -> update user status to none (works when subscribed to gamestatus)
+            
+        -> if game not subscribed
+            -> user status set to err (precence)
+
+subscriptions manager
+    -> status registration
+        -> on init stream user
+            -> precence subscription
+            -> user game status subscription 
+
+        -> on init/refresh if game is valid 
+            -> game status subscription
+
+    -> solution
+        -> use userstatus err and game status err independently
+        -> do not fire error on status -> none
+
+
+    -> on subscription init 
+        - last subscription resource id
+        - if last subscription resource id == this; do nothing

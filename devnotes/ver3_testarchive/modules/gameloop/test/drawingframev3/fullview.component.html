@@ -1,0 +1,56 @@
+<div id="drawing-component">
+        <div id="overlay"></div>
+        
+          <div id="default-board">
+            <div class="btn-group-vertical">
+            <button class="btn btn-primary-outline">Submit</button>  
+            </div>  
+          </div> 
+        
+          <div id="emojiControls">
+            <div id="lastFrame"></div>
+            
+            <div id="emojiList">
+              <div *ngIf="setupEmojiList">
+                <ul id="emoji-list">
+                    <li *ngFor="let icon of emojis" >
+                      <img [id]="icon.id" class="emoji" draggable="true" [alt]="icon.alt" [src]="icon?.dataUrl"  
+                      (dragstart)="dragEvents.dragstart($event, icon)"
+                      (click)="imgQueue.queueEmoji($event, icon)">
+                    </li>
+                </ul>
+              </div>
+            </div>
+        
+            <div id="resizeEditor">
+              <div id="imgQueue" (drop)="imgQueue.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+                image queue
+              </div>
+              
+              <div id="resizeArea" (drop)="resizeEditor.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+                drop imges to be resized inside of here...
+              </div>
+              
+              <div id="control-box">
+                <div>
+                  <input (change)="resizeEditor.sliderChanged($event)" id="resize-slider" type="range" [value]="sliderValue" min="-100" max="100">
+                </div>
+                <div>
+                  <button id="resizeBtn" [attr.href]="imgQueue.editButtonEnabled() ? '#' : null" 
+                  [class.disabled]="imgQueue.editButtonEnabled()" 
+                  (click)="imgQueue.editButtonEnabled() && imgQueue.editImage(resizeEditor)">2. Resize</button>
+                </div>
+                <div>
+                  <button id="doneResizeBtn" [attr.href]="resizeEditor.doneEditingEnabled() ? '#' : null" 
+                  [class.disabled]="resizeEditor.doneEditingEnabled()" 
+                  (click)="resizeEditor.doneEditingEnabled() && resizeEditor.doneEditing(imgQueue)">3. Done Resizing</button>
+                </div>
+              </div>
+              
+            
+              
+           
+          
+          </div>
+        </div>
+        </div>

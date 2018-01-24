@@ -1,0 +1,6 @@
+#default-board {
+    height: 25em;
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+    margin: 0 auto;
+}

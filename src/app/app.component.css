@@ -1,0 +1,201 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.container-fluid {
+    background: url(/img/MIAB-BG-Dark.png) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /*margin-top: -25px;*/
+    min-height: 100%;
+    bottom: 0;
+    overflow: hidden;
+    
+}
+
+/***LANDSCAPE NOT SUPPORTED OVERLAY***/
+#landscape-overlay {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10000;
+    background: url(/img/MIAB-Landscape-overlay.png) no-repeat center center fixed;
+    background-size: cover;
+}
+      
+
+/******CARD STYLING******/
+.cards {
+    height: 60vh;
+    background: rgba(0, 0, 0, .0);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 30%;
+    padding: 0;
+    top: 45%;
+    transform: translateY(-45%);
+    -moz-transform: translateY(-45%);
+    -webkit-transform: translateY(-45%);
+    position: absolute;
+    margin-top: 0;
+}
+
+.cards-header {  
+    background: rgba(0, 0, 0, .2);
+    height: 50px;
+    width: 100%;
+    white-space: nowrap;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.cards-body {
+    overflow-y: auto;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.cards-footer {
+    position: relative;
+    background: rgba(0, 0, 0, .3);
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/******FORM STYLING******/
+
+.form-control {
+    animation-delay: 1s;  
+}
+
+.md-form label {
+    font-family: Kalam;
+}
+
+.md-form input {
+    color: white;
+    text-align: center;
+}
+
+.md-form textarea {
+    color: white;
+}
+
+.input-error {
+    color: white;
+}
+
+.btn-lights {
+    background: rgba(77, 154, 219, 1);
+    font-family: Kalam;
+    font-weight: bold;
+    font-size: 1.2em;
+    vertical-align: middle;
+    animation-delay: 1s;
+    animation-timing-function: ease;
+    padding: .25em;
+    color: white;
+    transition: .2s;
+    white-space: normal;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    
+}
+
+.btn-darks {
+    background: rgba(34, 74, 157, 1);
+    font-family: Kalam;
+    font-weight: bold;
+    font-size: 1.2em;
+    vertical-align: middle;
+    animation-delay: 1s;
+    animation-timing-function: ease;
+    padding: .25em;
+    color: white;
+    transition: .2s;
+    white-space: normal;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.disabled {
+    color: lightgrey;
+}
+
+/***LOADING BAR***/
+
+.load-bar {
+  position: relative;
+ 
+  width: 99%%;
+  height: 10px;
+  background-color: #fdba2c;
+}
+.bar {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 50%;
+  text-align: center;
+}
+.bar:nth-child(1) {
+  background-color: #da4733;
+  animation: loading 3s linear infinite;
+}
+.bar:nth-child(2) {
+  background-color: #3b78e7;
+  animation: loading 3s linear 1s infinite;
+}
+.bar:nth-child(3) {
+  background-color: #fdba2c;
+  animation: loading 3s linear 2s infinite;
+}
+@keyframes loading {
+    from {left: 50%; width: 0;z-index:100;}
+    33.3333% {left: 0; width: 100%;z-index: 10;}
+    to {left: 0; width: 100%;}
+}
+
+
+/******MEDIA QUERIES******/
+@media screen and (max-width: 1000px) {
+    .cards {
+        height:85%;
+        width: 95%;
+        min-height: 100vmin;
+        top: auto;
+        transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+    }
+
+    /*.cards-footer {
+        display: none;
+    }*/
+}

@@ -1,0 +1,36 @@
+<div class="container-fluid animated pulse infinite">
+    <div class="logo animated bounceInUp infinte">
+        <img class="miab-logo animated pulse infinite" src="/img/MIAB-Logo-Landing.png">
+    </div>
+
+    <div class="landing-menu animated slideInRight">
+        <div class="slant top-btn" routerLink="/game/menu" id="guest-play">
+            <h1>Play Now</h1>
+        </div>
+
+        <div class="slant middle-btn" *ngIf="!authService.loggedIn" routerLink="/accounts/login" id="login-btn">
+            <h1> Login </h1>
+        </div>
+
+        <div class="slant" *ngIf="showSignUp()" [class.last-btn]="!authService.loggedIn" [class.middle-btn]="authService.loggedIn" routerLink="/accounts/signup" id="signup-btn">
+            <h1> Signup</h1>
+        </div>
+    </div>
+</div>  
+    
+<!--<button type="button" class="btn btn-primary btn-block">Play Now!</button></a>
+
+
+    <div class="landing-buttons">
+        <a href="" routerLink="/testmenu"><img class="animated fadeInDown" id="play-button" src="/img/miab-wood-button-play.png" /></a> 
+
+        <a *ngIf="!authService.loggedIn" routerLink="/accounts/login" href="">
+            <img class="animated fadeInDown" id="login-button" src="/img/miab-wood-button-login.png" /></a>
+
+        <a *ngIf="showSignUp()" routerLink="/accounts/signup" href="">
+            <img class="animated fadeInDown" id="signup-button" src="/img/miab-wood-button-signup.png" /></a>
+    </div> 
+
+    <button (click)="moveBottle()">Test Bottle Animation</button>-->
+
+

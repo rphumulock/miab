@@ -1,0 +1,40 @@
+
+    "src/main*.ts",
+    "src/polyfills.ts"
+
+  "files" :[
+    "src/app/app.module.ts",
+    "src/main.browser.ts"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+
+      "paths": {
+       "@angular/common": ["node_modules/@angular/common"],
+       "@angular/compiler": ["node_modules/@angular/compiler"],
+       "@angular/core": ["node_modules/@angular/core"],
+       "@angular/forms": ["node_modules/@angular/forms"],
+       "@angular/http": ["node_modules/@angular/http"],
+       "@angular/platform-browser": ["node_modules/@angular/platform-browser"],
+       "@angular/platform-browser-dynamic": ["node_modules/@angular/platform-browser-dynamic"],
+       "@angular/router": ["node_modules/@angular/router"],
+       "rxjs/Rx": ["node_modules/rxjs/Rx"],
+       "rxjs/add/operator/toPromise": ["node_modules/rxjs/add/operator/toPromise"]
+    }
+
+"exclude": [
+    "node_modules/",
+    "devnotes/",
+    "prod/",
+    "pub/",
+    "**/*.ngfactory.ts",
+    "**/*.shim.ts",
+    "**/*.spec.ts",
+    "**/*.d.ts",
+    "test.ts",
+    "src/main*aot.ts",
+    "src/polyfills.ts"
+  ],
+
+  "lint": "tslint ./src/**/*.ts -t verbose",

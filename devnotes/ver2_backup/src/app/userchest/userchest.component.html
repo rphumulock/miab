@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="scroll-border text-center">
+                <div class="scroll" drag-scroll="true" drag-scroll-y-disabled="true" scrollbar-hidden="true">
+                    <img *ngFor="let scroll of scrolls | async" (click)="getFrames(scroll)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="margin text-center">
+            <div class="scroll-border-s vert text-center">
+                <div id="framesSpace" class="scroll-s" drag-scroll="true" drag-scroll-x-disabled="true" scrollbar-hidden="true">
+                    <div *ngFor="let frame of frame | async" [innerHtml]="frame.element"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

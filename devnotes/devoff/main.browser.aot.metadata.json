@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":3,"metadata":{"platformRef":{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@angular/platform-browser","name":"platformBrowser"}}}},{"__symbolic":"module","version":1,"metadata":{"platformRef":{"__symbolic":"call","expression":{"__symbolic":"reference","module":"@angular/platform-browser","name":"platformBrowser"}}}}]

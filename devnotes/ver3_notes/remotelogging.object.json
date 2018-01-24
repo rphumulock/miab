@@ -1,0 +1,8 @@
+{
+    "timestamp": "dateinmilliseconds",
+    "userid": "none",
+    "ipaddress": "none",
+    "level": "error|log|warn",
+    "message": "string",
+    "error": "object"
+}

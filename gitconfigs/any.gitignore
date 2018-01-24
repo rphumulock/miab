@@ -1,0 +1,14 @@
+/node_modules
+/npm-debug.log
+/.vscode/chrome
+/dist
+**/*DS_Store
+/aot
+/jit
+/webdev
+**/*.orig
+**/*_BACKUP_*
+**/*_BASE_*
+**/*_LOCAL_*
+**/*_REMOTE_*
+**/npm-debug.log*

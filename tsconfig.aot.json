@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["es2015", "dom"],
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "files": [
+    "src/main.browser.ts",
+    "src/main.browser.aot.ts"
+  ],
+  "exclude": [
+    "webpackconfigs",
+    "databaserules",
+    "node_modules",
+    "**/test*.ts",
+    "devnotes",
+    "wwwroot",
+    "server",
+    "webdev",
+    "devenv",
+    "dist",
+    "aot",
+    "**/*.ngfactory.ts",
+    "**/*.shim.ts",
+    "**/*.spec.ts",
+    "**/*.d.ts",
+    "**/test.ts",
+    "**/*-aot.ts"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit": false
+  }
+}

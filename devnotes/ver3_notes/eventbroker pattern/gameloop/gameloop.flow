@@ -1,0 +1,66 @@
+Original: 2017Dec20
+
+Current Flows:
+
+
+resolve guard
+    - details service -> get details
+    - validate route
+        - current turn is even -> text 
+        - else -> drawing
+    - return 
+
+details service
+    - subscriptions service 
+        -> get game turn 
+        -> returns game object
+    - parse complete on turn value 
+    - get assigned scroll
+    - get previous frame
+    - create/return details object
+
+subscriptions service
+    - get valid active game 
+        - get game
+        - is not valid, reject promise
+    - check subscriptions
+        - if game id != game id
+            - unsubscribe from current frame
+            - unsubscribe start play
+            - this.subscription = null
+    - if !this.subscription 
+        - subscribe to game turn
+            - ignore initial value
+            - this.submitframe
+                - this.onchangecallback(isEarly = false)
+    - if !start play
+        - wait(observer)
+    - else 
+        - observer.next(game)
+
+
+
+abstract gameloop
+    - ngoninit
+        - subscription service -> provide callback
+
+    - submit frame
+        -> show modal
+        -> if not isEarly route to next
+
+    - route to next
+        - next = current + 1
+        - close modal
+        - route to completed or next
+
+    
+
+
+
+
+
+
+
+
+
+

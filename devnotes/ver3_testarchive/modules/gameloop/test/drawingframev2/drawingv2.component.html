@@ -1,0 +1,134 @@
+<div id="drawing-component">
+<div id="overlay"></div>
+
+  <div id="default-board">
+    <div class="btn-group-vertical">
+    <button class="btn btn-primary-outline">Submit</button>
+    <button (click)="toggleControls()" class="btn btn-primary-outline" id="emojiBtn">Emojis!</button>  
+    </div>  
+  </div> 
+
+  <div id="emojiControls" [style.display]="openControls ? 'Block' : 'none'">
+    <div id="lastFrame"></div>
+    
+    <div id="emojiList">
+      <div *ngIf="setupEmojiList">
+        <ul id="emoji-list">
+            <li *ngFor="let icon of emojis" >
+              <img [id]="icon.id" class="emoji" draggable="true" [alt]="icon.alt" [src]="icon?.dataUrl"  
+              (dragstart)="dragEvents.dragstart($event, icon)"
+              (click)="imgQueue.queueEmoji($event, icon)">
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="resizeEditor">
+      <div id="imgQueue" (drop)="imgQueue.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+        image queue
+      </div>
+      
+      <div id="resizeArea" (drop)="resizeEditor.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+        drop imges to be resized inside of here...
+      </div>
+      
+      <div id="control-box">
+        <div>
+          <input (change)="resizeEditor.sliderChanged($event)" id="resize-slider" type="range" [value]="sliderValue" min="-100" max="100">
+        </div>
+        <div>
+          <button id="resizeBtn" [attr.href]="imgQueue.editButtonEnabled() ? '#' : null" 
+          [class.disabled]="imgQueue.editButtonEnabled()" 
+          (click)="imgQueue.editButtonEnabled() && imgQueue.editImage(resizeEditor)">2. Resize</button>
+        </div>
+        <div>
+          <button id="doneResizeBtn" [attr.href]="resizeEditor.doneEditingEnabled() ? '#' : null" 
+          [class.disabled]="resizeEditor.doneEditingEnabled()" 
+          (click)="resizeEditor.doneEditingEnabled() && resizeEditor.doneEditing(imgQueue)">3. Done Resizing</button>
+        </div>
+      </div>
+      
+    
+      
+   
+  
+  </div>
+</div>
+</div>
+
+
+
+
+
+  <!--<div id="Instructions">
+      <strong> Instructions </strong>
+      <ul>
+        <li> Drag emojis to the drawing board to place them </li>
+        <li> Click emojis to add them to your queue </li>
+        <li> Click resize button to send emoji to resizer </li>
+        <li> Click Done Resizing to save edits to the queue and clear resizer </li>
+        <li> Drag edited emojis from eithe resizer or queue </li> 
+        <li> Have fun! </li>
+      </ul> 
+    </div> -->
+
+
+    <!-- <div id="default-board">
+  <button data-toggle="collapse" data-target="#emojiControls" class="btn btn-primary-outline">Submit</button> 
+  <button class="btn btn-primary-outline">Submit</button>
+  <button (click)="toggleControls()" class="btn btn-primary-outline" id="emojiBtn">Emojis!</button>
+ <button data-toggle="collapse" data-target="#emojiControls" class="btn btn-primary-outline" (click)="submitFrame(true)">Submit</button> 
+ 
+</div> 
+
+    
+    
+  <div id="emojiControls" [style.display]="openControls ? 'block' : 'none'">
+  <div id="emojiControls" [class.collapse]="openControls">
+    <div id="emojiControls" [style.display]="openControls ? 'block' : 'none'">
+    <div id="lastFrame">
+        
+    </div>
+  
+  
+    <div id="emojiList">
+      <div *ngIf="setupEmojiList">
+        <ul id="emoji-list">
+            <li *ngFor="let icon of emojis" >
+              <img [id]="icon.id" class="emoji" draggable="true" [alt]="icon.alt" [src]="icon?.dataUrl"  
+              (dragstart)="dragEvents.dragstart($event, icon)"
+              (click)="imgQueue.queueEmoji($event, icon)">
+              "(dragstart)="dragEvents.dragstart($event, icon)" (touchend)="touchEvents.touchend($event, icon)"
+              (click)="imgQueue.queueEmoji($event, icon)">
+            </li>
+        </ul>
+      </div>
+    </div>
+    <div id="resizeEditor">
+      <div id="resizeArea" (drop)="resizeEditor.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+        drop imges to be resized inside of here...
+      </div>
+      <div>
+        <input (change)="resizeEditor.sliderChanged($event)" id="resize-slider" type="range" [value]="sliderValue" min="-100" max="100">
+      </div>
+      <div>
+        <button id="doneResizeBtn" [attr.href]="resizeEditor.doneEditingEnabled() ? '#' : null" 
+        [class.disabled]="resizeEditor.doneEditingEnabled()" 
+        (click)="resizeEditor.doneEditingEnabled() && resizeEditor.doneEditing(imgQueue)">3. Done Resizing</button>
+      </div>
+    </div>
+    
+    <div id="imgQueue" (drop)="imgQueue.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+      image queue
+    </div>
+    
+    
+      <div>
+        <button id="resizeBtn" [attr.href]="imgQueue.editButtonEnabled() ? '#' : null" 
+        [class.disabled]="imgQueue.editButtonEnabled()" 
+        (click)="imgQueue.editButtonEnabled() && imgQueue.editImage(resizeEditor)">2. Resize</button>
+        <button (click)="getHistoryStack()">Console Log WebStorage -- Testing You Can Remove This...</button>
+      </div>
+    
+  </div>
+</div> -->

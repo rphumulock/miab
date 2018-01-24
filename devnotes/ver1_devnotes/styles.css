@@ -1,0 +1,12 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #e9e6be;
+    text-decoration: inherit;
+    font-weight: inherit;
+}

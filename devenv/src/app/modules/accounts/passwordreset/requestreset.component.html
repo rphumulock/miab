@@ -1,0 +1,33 @@
+
+<div *ngIf="!resetSent" class="cards animated fadeIn">
+    <div class="cards-header">
+        <h1 class="animated zoomIn">Forgot your password?</h1>
+    </div>
+
+    <p class="reset-info animated fadeIn">Enter your email and we'll send you a reset link.</p>
+
+    <div class="cards-body">
+        <form [formGroup]="resetPasswordForm">
+            <div class="md-form animated fadeIn" id="email-input">
+                <input id="email" formControlName="email" type="text" class="form-control" (focusin)="viewportManager.onfocus()" 
+                (blur)="viewportManager.onblur()">
+                <label for="defaultForm-email">Email</label>
+                <div *ngIf="formErrors.email" class="input-error"><small>{{ formErrors.email }}</small></div>
+            </div>
+
+            <button [class.disabledBtn]="formErrors.email" class="btn-lights animated bounceIn waves-effect" 
+            id="reset-btn" type="submit" (click)="requestResetEmail()">RESET PASSWORD</button>
+
+            <p class="nav-links animated fadeIn"> <a routerLink="/accounts/login">Sign In!</a> | <a routerLink="/accounts/signup">Sign Up!</a></p>
+        </form>
+    </div>
+
+    <div *ngIf="resetSent" class=""> 
+        <p>Your password reset email was sent!<p>
+    </div> 
+    </div>  
+    
+   <!-- <div class="cards-footer"></div>
+</div>  -->
+                
+

@@ -1,0 +1,51 @@
+.scroll {
+  height: 150px;
+  width: 100%!important;
+  background-color: #FFFFFF;
+}
+.scroll-border {
+  padding: 5px 5px 5px 5px;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #CFCFCF;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 100%;
+}
+.scroll img {
+  height: 150px;
+  width: 150px;
+  margin-right: .5rem;
+}
+.scroll img:last-of-type {
+  margin-right: 0;
+}
+
+.scroll-s {
+  height: 500px;
+  width: 150px;
+  background-color: #FFFFFF;
+}
+.scroll-border-s {
+  padding: 5px 5px 5px 5px;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #CFCFCF;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.scroll-s img {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 1rem;
+}
+.scroll-s img:last-of-type {
+  margin-bottom: 0;
+}
+.vert {
+    margin: 0 auto;
+    width: 170px;
+}
+.margin {
+    margin-top: 5rem;
+}

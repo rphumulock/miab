@@ -1,0 +1,60 @@
+- /accounts
+    - current session -> isInitialized ? currentUser : null;
+    - route correction 
+        -> if loggedin 
+            -> if redirect set
+                -> if anonymous && allowed on anonymous
+                    -> redirect
+                -> if permanent 
+                    -> redirect
+            -> if anonymous 
+                - /login -> true
+                - /signup -> true
+                - /reset -> false -> /signup 
+                - /profile -> true
+            -> if permanent 
+                - /login -> false -> /profile
+                - /signup -> false 
+                - /reset -> true
+                - /profile -> true
+        -> if logged off
+                - /login -> true
+                - /signup -> true
+                - /reset -> true
+                - /profile -> false -> /login
+
+- /accounts/login
+    - login form
+- /accounts/profile
+    - logout button
+    - upgrade account button if applicable
+- /accounts/signup
+    - sign up form
+- /accounts/reset 
+    - forgot password form...
+    - currently only accepts email during login anyway..
+    - eventually
+        -> own child routes: /reset/forgotusername & /reset/password
+        -> own router-outlet
+        -> or... use dialogs...
+
+
+/usersession guard
+    -> isInitialized
+        -> return true;
+        -> else; navigate to login
+/gamesession guard
+    -> isLoggedIn?
+        -> continue;
+        -> else; error dialog; navigate back;
+    -> isInitialized?
+        -> return true;
+        -> else; start init, subscribe return results
+/currentlogin guard
+    -> isLoggedIn?
+        -> isInitialized?
+            -> isSameAccount? 
+                -> continue;
+                -> else; initUserSession; resetGameSession;
+            -> else; initUserSession; redirect;
+    -> return true;

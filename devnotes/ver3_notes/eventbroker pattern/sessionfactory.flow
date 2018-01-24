@@ -1,0 +1,84 @@
+Original: 2017Nov25
+
+Flows:
+
+    -> receive refresh session event
+        -> new timeout
+        -> broadcast reset gamesession 
+        -> broadcast reset subscriptions { options: gamerelevant }
+        -> if ( show modal ) show modal 
+        -> return get valid game session
+
+    -> receive init session event
+        -> new timeout
+        -> broadcast reset gamesession 
+        -> broadcast reset subscriptions { options: all }
+        -> if ( show modal ) show modal 
+        -> return get valid game session
+
+    -> get valid game session
+        -> if no user not logged in
+            -> broadcast error { reset: false; redirect: login } **
+            -> return false; 
+        -> get streamuser 
+            -> catch (none returned)
+                -> return request new user
+        -> validate user 
+            -> clear timeout 
+            -> broadcast init subscription { option: presence }
+            -> broadcast streamuser
+            -> close modal
+        -> on error 
+            -> log error
+            -> broadcast error { reset: false; redirect: error } **
+            -> return false;
+
+    -> request new user
+        -> clear timeout
+        -> establish node subscription
+            -> exists only; take 1
+        -> new timeout
+        -> submit request
+        -> recevied
+            -> clear timeout
+            -> return user
+        -> on error 
+            -> clear timeout
+            -> return error 
+        
+    -> validate stream user
+        -> validate streamuser
+        -> if game assigned, validate game
+        -> if not valid 
+            -> return request session rebuild
+
+    -> request session rebuild 
+        -> clear timeout
+        -> establish node subscription
+            -> exists only; skip initial; take 1
+        -> new timeout
+        -> receive new user 
+            -> clear timeout 
+            -> return user
+        -> on error
+            -> clear timeout
+            -> error 
+
+    -> on timeout 
+        -> broadcast error { reset: false, redirect: landing } **
+
+    -> request session reset/rebuild
+        -> clear timeout
+        -> create request firebase reference
+        -> subscribe to reference
+        -> filter for completed status
+        -> on completed
+            -> request latest session object
+            -> validate user
+                -> return user
+            -> on error | invalid user
+                -> broadcast error { reset: false, redirect: error }
+
+
+        
+

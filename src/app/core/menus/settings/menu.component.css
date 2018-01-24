@@ -1,0 +1,70 @@
+
+.settingsicon {
+    position: fixed;
+    right: 0;
+    z-index: 10003;
+    top: 0;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 0px;    
+}
+
+.fa-gear {
+    color: grey;
+}
+
+.fa-gear:hover {
+    color: black;
+}
+ 
+.settingsmenu {
+    position: fixed;
+    z-index: 1001;
+   
+    float: right;
+    min-width: 10rem;
+    padding: .5rem 0;
+    font-size: 1.2em;
+    color: #292b2c;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    top: 0;
+    margin-top: 2%;
+    right: 0 !important; 
+    left: auto;
+    font-family: Kalam;
+    transition: 0.5s;
+    width: 250px;
+    height: 200px;
+    margin-right: -250px;
+    animation-timing-function: ease;
+}
+
+.settingsmenu.isActive {
+    margin-right: 0;
+}
+
+#landing-settings {
+    padding-top: 30px;
+}
+
+.dropdown-item.disabled {
+    color: lightgrey;
+}
+
+
+/*MENU COMPONENT MEDIA QUERIES*/
+@media screen and (max-width: 960px) {
+    .settingsicon {
+        padding-top: 20px;
+        padding-right: 12px;
+        padding-left: 0px;    
+    }
+    
+}
+

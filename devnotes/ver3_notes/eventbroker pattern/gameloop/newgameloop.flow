@@ -1,0 +1,89 @@
+Original: 2017Dec21
+
+New Flows:
+
+
+Problems:
+
+- get details
+- correct route
+- subscribe to current frame
+- subscribe to start round
+- global error subscription resets
+- submit frame on current frame change
+- submit frame subscription
+
+Classes:
+
+GameLoopDetailsService
+    - is initial default = false;
+    - subscribe details request
+        - parse request
+        - if is initial 
+            - add subscriptions to subcriptions manager
+            - init subscriptions
+
+
+GameLoopManager
+    - is updated default = false;
+    - play round default = false;
+    - is submitted default = false;
+    - subscribe event new details
+        - process details 
+            - if play round, this.playround = true;
+        - is updated = true;
+        - redirect start route
+    - subcribe start round events
+        - play round = true
+    - subscribe submit frame
+        - play round = false;
+    - resetForNextFrame()
+        - updated = false;
+        - is submitted = false;
+
+
+Subscription Current frame
+    - game id
+    - init
+        - if manager.game id != this; reset and subscribe 
+    - unsubscribe
+    - callback
+        - new event submit frame
+
+
+Subscription Start round
+    - game id
+    - init
+        - if manager.game id != this; reset and subscribe 
+    - unsubscribe
+    - callback
+        - new event submit start round
+
+
+Correct route proposal:
+    - can deactivate guard
+        - manager is submitted == true?
+    - can activate route correction guard 
+        - subscribe latest game turn details received
+            - this latest details received = true;
+        - if this is latest details updated = true
+            - check route
+            - this latest details = false
+            - return true/new route
+        - else....
+            - new event, request redirect
+            - new event, request details 
+        
+
+Abstract component proposal:
+    - on init 
+        - update manager (route complete)
+            - is updated = false 
+            - is submitted = false
+        - manager -> start round?
+            - no -> show waiting for round to start overlay
+        - subscribe to submit frame events
+            - 
+        
+
+

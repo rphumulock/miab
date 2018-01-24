@@ -1,0 +1,81 @@
+
+Landing Page
+    -> Bottle animation on navigation away
+        -> Bottle becomes an oversized image as the title banner
+    -> Hamburger menu (Contact Us)
+        -> Email Link
+        -> Facebook
+        -> Instagram
+        -> Twitter
+    -> Gear Menu (Settings) 
+        -> Completed Games - Deactivated Until Required.
+        -> Profile (not in prototype v1)
+        -> Log out| Login / Sign Up
+    -> Buttons (ngIf !logged in)
+        -> Play now 
+            -> Game Menu
+        -> Login
+            ->
+        -> Signup
+            ->
+    -> CanDeactive Guard for Bottle Animation
+
+Game Meuu Page  
+    -> Hamburger Menu
+    -> Gear Menu
+    -> Butttons
+        -> Start Game
+        -> Join Game
+        -> Completed Games
+
+
+Login Page
+    -> Bring attention to the sign up option
+
+Game Code Modal
+    -> User name Input box 
+        -> Need to verify that it pulls the users current user name
+    -> Game Code Input box
+
+Please Wait Modal
+    -> Need to be styled
+
+Error Modal 
+    -> Need to be styled 
+
+Lobby Page
+    -> Need a demo of a lobby page.
+
+Drawing Page
+    -> Split into two major sections horizantally
+    -> The top 4/5 of the screen will be the "cards" section 
+    -> Cards section: Multiple cards with tabs that are invisible
+    -> A separate card for:
+        -> The canvas
+        -> The emoji library 
+        -> Edit emoji space
+    -> On the bottom 1/5 of the screen
+        -> Split into two areas vertically 
+        -> To the left (4/5 of the space): Thumbnail window where selected emoji's will be displayed
+        -> To the right: Menu to use emojis
+            -> Emoji (to open emoji card)
+            -> Edit/Finish Editing link (to open/close edit card)
+            -> Done (to close edit/emoji library card) and display the canvas card
+    
+
+Complete Page
+    -> Similar to the angular 2 drag scroll display
+    -> Three collapsable spaces 
+    -> 1. (Top) will be a listing of the users completed Games
+    -> 2. When a game is selected a drag scroll of the games Scrolls
+    -> 3. When a scroll is selected a veritically scrolling window displaying 
+        a games frames...
+
+
+
+Splash Screen 
+    -> Scrolls comes out of bottle and becomes menu banner...
+Completed vs Past Games in Gear Menu
+Resize in Canvas
+Keeping Canvas Data when users browse away if in the same turn
+A Shopping 

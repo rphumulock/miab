@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-8 col-lg-8">
+            <div class="card" id="completed-card">
+                <div class="card-header" id="completed-header">
+                    <div id="gameCode">Game Code: {{ gameCode() }}</div>
+                </div>
+                <div class="card-block" id="completed-block">
+                    <div class="acc-bar" [class.openordaccordian]="activeAccordian.first">
+                        <h2 (click)="toggleAccordian(1)">Games</h2>
+                        <div *ngIf="first" class="row">
+                            <div class="col">
+                                <div class="scroll-border text-center">
+                                    <div class="scroll" drag-scroll drag-scroll-y-disabled="true" scrollbar-hidden="true">
+                                        <img *ngFor="let scroll of scrolls" (click)="clickGame($event)" src="/img/starwars.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="acc-bar" [class.openordaccordian]="activeAccordian.second">
+                        <h2 (click)="toggleAccordian(2)">Scrolls</h2>
+                        <div *ngIf="second" class="row">
+                            <div class="col">
+                                <div class="scroll-border text-center">
+                                    <div class="scroll" drag-scroll drag-scroll-y-disabled="true" scrollbar-hidden="true">
+                                        <div *ngFor="let scroll of scrolls">
+                                            <img (click)="clickScroll($event)" src="/img/starwars.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="acc-bar" [class.openordaccordian]="activeAccordian.third">
+                        <h2 (click)="toggleAccordian(3)">Frames</h2>
+                        <div *ngIf="third" class="row">
+                            <div class="col">
+                                <div class="scroll-border text-center">
+                                    <div class="scroll" drag-scroll scrollbar-hidden="true">
+                                        <div *ngFor="let scroll of scrolls">
+                                            <img (click)="clickFrame($event)" src="/img/starwars.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer" id="completed-footer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="landing-accent" class="animated bounceInUp">
+    </div>
+
+    <div id="landing-bottom" class="animated bounceInUp">
+    </div>
+</div>

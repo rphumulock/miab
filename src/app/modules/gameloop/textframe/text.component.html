@@ -1,0 +1,40 @@
+<!--<div class="flex-container mx-auto">
+  <div class="text-center">
+    <div *ngIf="details?.previousFrame?.val" id="previousFrameImg"><img [src]="details.previousFrame.val"></div>
+    <form role="form" [formGroup]="userGuessForm" novalidate>
+        <div class="form-content">
+            <label for="guess">Your Guess:</label>
+            <input id="guess" formControlName="guess" type="text" placeholder="Enter a guess..." class="form-control" required>
+            <div *ngIf="formErrors.guess" class="error"><small>{{ formErrors.guess }}</small></div>
+            <button class="btn btn-success" (click)="submitGuess()" type="submit">Submit</button>
+        </div>
+    </form>
+  </div>
+</div>-->
+
+<div class="container-fluid">
+  <div id="previousFrameImg" class="cards">
+      <div class="cards-header">
+          <h1>{{ userMessage }}</h1>
+      </div>
+
+      <div class="cards-body">
+          <div *ngIf="details?.previousFrame?.val" id="img-box">  
+              <img id="img-frame" [src]="details.previousFrame.val">
+          </div>  
+
+          <div id="guess-box">
+              <form [formGroup]="userGuessForm">
+                  <div class="md-form animated fadeIn" id="guess-input">
+                      <input (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()" id="guess" formControlName="guess" type="text" class="form-control">
+                      <label for="guess">{{ inputLabel }}</label>
+                      <div *ngIf="formErrors.guess" class="input-error"><small>{{ formErrors.guess }}</small></div>
+                  </div>
+              </form>
+          </div>
+          <button class="btn-lights" id="guess-btn" (click)="submitGuess()" type="submit">Submit</button>
+      </div>
+
+      <div class="cards-footer"></div>
+  </div>
+</div>

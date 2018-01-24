@@ -1,0 +1,190 @@
+.container-fluid {
+  background: url(/img/MIAB-BG-white-sm.png) no-repeat  fixed;
+  background-size: auto 100%; 
+}
+
+.cards-light {
+  width: 98%;
+  position: relative;
+  margin: 0 auto;
+  height: calc(100vh - 8em);
+}
+
+.cards-body-light {
+  height: 100%;
+  position: relative;
+}
+
+/*.temp {
+  height: 100%;
+}*/
+
+#game-code {
+  font-family: Kalam;
+  font-size: 4vw;
+}
+
+.scroll {
+  min-height: 50vh;
+  max-height: 100vh;
+  width: 100%!important;
+}
+
+/*.game-div {
+  background: url(/img/starwars.jpg) no-repeat fixed;
+  background-size: auto 100%;
+}*/
+
+#game-scroll {
+  height: 21em;
+  width: 100%;
+}
+
+#game-scroll:nth-child(even) {
+  background: rgba(34, 74, 157, 1);
+}
+
+.is-odd {
+  background: rgba(77, 154, 219, 1);
+}
+
+#game-scroll:nth-child(odd) {
+  background: rgba(77, 154, 219, 1);
+}
+
+.scroll img {
+  height: 100%;
+  width:  auto;
+  max-width: 100%;
+  margin-right: .5rem;
+
+}
+
+.scroll img:last-of-type {
+  margin-right: 0; 
+}
+
+.scroll-border {
+  padding: 5px 5px 5px 5px;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #CFCFCF;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.img-frame {
+  margin-bottom: .5rem;
+
+}
+
+.text-frame {
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.text-frame p {
+  font-family: kalam;
+  font-size: 7vw;
+  white-space: normal;
+}
+
+.scroll-s {
+  height: 500px;
+  width: 150px;
+  background-color: rgba(255,255,255,0.3);
+}
+.scroll-border-s {
+  padding: 5px 5px 5px 5px;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #CFCFCF;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.scroll-s img {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 1rem;
+}
+.scroll-s img:last-of-type {
+  margin-bottom: 0;
+}
+.vert {
+    margin: 0 auto;
+    width: 170px;
+}
+.margin {
+    margin-top: 5rem;
+}
+
+.accordion {
+  display: block;
+  width: 100%;
+  padding: 0.5em 0.5em 1px 0.5em;
+  margin: 0 auto;
+  background-color: #666;
+  border-radius: 5px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+}
+
+.acc-bar {
+  display: block;
+  width: 100%;
+  height: 2em;
+  padding: 0 1em;
+  margin: 0 0 0.5em 0;
+  color: #333;
+  background-color: rgba(34, 74, 157, 1);
+  overflow: hidden;
+  border-radius: 3px;
+  font-family: Lobster;
+  position: relative;
+}
+
+.acc-bar h2 {
+  font-size: 1em;
+  font-weight: bold;
+  width: 100%;
+  line-height: 2em;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.acc-bar h2 a {
+  display: block;
+  width: 100%;
+  line-height: 2em;
+  text-decoration: none;
+  color: inherit;
+  outline: 0 none;
+}
+
+.acc-bar.openordaccordian {
+  height: 80%;
+  background-color: rgba(255,255,255,0.5);
+  animation-delay: .5s;
+}
+
+.acc-bar.openordaccordian h2 {
+  font-size: 1.6em;
+  color: #333;
+}
+
+
+.acc-bar,
+.acc-bar h2 {
+  -webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+

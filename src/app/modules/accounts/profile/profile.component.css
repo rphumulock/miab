@@ -1,0 +1,119 @@
+.card {
+    height: 60vh;
+    background: rgba(0, 0, 0, .0);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    width: 30%;
+    min-width: 350px;  
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.card-header {
+    background: rgba(0, 0, 0, .15);
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    padding: 0;
+}
+
+.card-body {
+    position: absolute;
+    overflow-y: auto;
+    justify-content: center;
+    width: 100%;
+    overflow-y: auto;
+    margin-top: 50px;
+    height: 100%;
+    padding-bottom: 5%;
+}
+
+#profile-avatar {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    width: 100px;
+    min-width: 75px;
+    height: auto;
+    opacity: .9;
+    top: -50%;
+
+}
+
+.card-footer {
+    background: rgba(0, 0, 0, .1);
+    position: absolute;
+    bottom: 0;
+    height: 5%;
+    width: 100%;
+}
+
+
+
+#profile-user {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+#profile-upgrade { 
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+
+#link-btn {
+    background: rgba(34, 74, 157, 1);
+    font-family: kalam;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    animation-delay: 1s;
+    animation-timing-function: ease;
+    white-space: nowrap;
+}
+
+#logout-btn {
+    background: rgba(77, 154, 219, 1);
+    font-family: kalam;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    animation-delay: 1.2s;
+    animation-timing-function: ease;
+   
+}
+
+p, h2, h4 {
+    font-family: Kalam;
+    color: white;
+}
+
+hr {
+    background: white;
+}
+
+/*PROFILE PAGE MEDIA QUERIES*/
+@media screen and (max-width: 960px) {
+    .card {
+        height: 70vh;
+        width: 90%;
+        margin-top: 25px;
+    }
+}

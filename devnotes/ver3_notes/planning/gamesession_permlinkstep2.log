@@ -1,0 +1,16 @@
+relative url: permlinksessiontest;permlink=00SF3XT
+test.permlink.component.ts:144 absolute url: http://localhost:3000/permlinksessiontest;permlink=00SF3XT
+test.permlink.component.ts:147 base url: http://localhost:3000/
+user obejct returned is null!
+test.simple.component.ts:106 UserSessionService {projService: FirebaseProjectService, permlinkCode: "00SF3XT", permlinkId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2", _isPermlinkUser: true}authId: (...)displayName: (...)email: (...)isAnonymous: (...)isPermlinkUser: (...)permlinkCode: "00SF3XT"permlinkId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2"photoUrl: (...)projService: FirebaseProjectServiceuserId: (...)userPermlinkCode: (...)_isPermlinkUser: true__proto__: Object
+
+You must login to test the user session service
+test.component.ts:180 user obejct returned is null!
+test.component.ts:185 provider: firebase
+test.component.ts:186 U {ba: Array(0), j: "AIzaSyBQHZuhCKplCYc_9k0FLT63mmULm5BGvvI", D: "dev", v: "miab-angular-dev.firebaseapp.com", g: S…}
+UserSessionService {projService: FirebaseProjectService, permlinkCode: "00SF3XT", permlinkId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2", _isPermlinkUser: true, _authId: "3j0pYzJEVRY4kDJcqnAiOodcBl72"…}authId: "3j0pYzJEVRY4kDJcqnAiOodcBl72"displayName: (...)email: (...)isAnonymous: (...)isPermlinkUser: (...)permlinkCode: "00SF3XT"permlinkId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2"photoUrl: (...)projService: FirebaseProjectServiceuserId: (...)userPermlinkCode: (...)_authId: "3j0pYzJEVRY4kDJcqnAiOodcBl72"_isAnonymous: true_isPermlinkUser: true__proto__: Object
+gamesession.service.ts:182 requesting new stream user...
+test.simple.component.ts:136 Returned GameStatus: none
+test.simple.component.ts:137 GameSessionService {userSession: UserSessionService, firebaseProjs: FirebaseProjectService, initStreamUserObservable: function, readStreamUser: function, requestStreamUser: function…}firebaseProjs: FirebaseProjectServicegameRef: (...)initStreamUserObservable: function ()online: truepresenceRef: UpresenceSubscription: SubscriberpresenceSubscriptionCallback: function (snapshot)readStreamUser: function (snap)requestStreamUser: function (observer)userRef: (...)userSession: UserSessionService_userRef: U__proto__: Object
+test.permlink.component.ts:195 Game {gameCode: "73LCW", ownerId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2", playerCount: 1, minPlayersReq: 5, maxPlayers: 10…}currentFrame: -1gameCode: "73LCW"gameId: "K2RYP0PJ94"gameState: "complete"maxPlayers: 10minPlayersReq: 5ownerId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2"playerCount: 1players: Array(1)scrolls: Array(1)submissions: Array(11)timeStamp: Object__proto__: Object
+test.permlink.component.ts:262 Permlink is previous: 00SF3XT

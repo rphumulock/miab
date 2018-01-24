@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "subscribers": {
+      ".write": "auth != null",
+      "$key": {
+        ".validate": "!data.exists()"
+      }
+    }
+  }
+}
+
+
+-Khu7tXAuns2Fvxfdz0e
+asd@sdf.com
+

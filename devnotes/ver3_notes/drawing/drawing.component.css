@@ -1,0 +1,61 @@
+#default-board {
+  height: 17em;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  margin: 0 auto;
+}
+
+
+/*
+Great resource on css text/content alignment
+https://www.w3.org/Style/Examples/007/center.en.html
+*/
+
+#resizeArea {
+  width: 350px;
+  height: 350px;
+  margin-bottom: 30px;
+  background: white;
+  border: 2px solid #aaaaaa;
+  border-style: inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#resize-img {
+  /*display: block;*/
+  margin: auto;
+}
+
+#resize-slider {
+  margin-left: 50px;
+  width: 250px;
+}
+
+#imgQueue {
+  width: 230px;
+  /** 225 = 45 * 5 */
+  height: 45px;
+  margin-left: 20px;
+  background: white;
+  border: 2px solid #aaaaaa;
+  border-style: inset;
+}
+
+#imgQueueList {
+  display: block;
+  list-style: disc;
+  align-items: left;
+  justify-content: left;
+}
+
+#imgQueueList li {
+  display: inline-block;
+  font-size: 43px;
+}
+
+#queueImg {
+  height: 1em;
+  width: 1em;
+}

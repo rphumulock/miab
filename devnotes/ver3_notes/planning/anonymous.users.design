@@ -1,0 +1,128 @@
+////---////--- Permlinks and Anonymous Users ---////---////
+permlink:
+    aaaa: { 
+        userid: uid, 
+        gamelist: id
+    }
+}
+
+1st visit to site:
+-----------------------
+login as anonymous
+play and complete game, then miabuser object is created
+server generates permlink code, updates maibuser
+set gamelist.permlinkcode
+
+
+anonymous 
+    - isAnonymous = true
+    - authid = 1234
+    - permlinkcode = aaaa
+    - isPermlinkOriginUser = true
+    - gamelist = 3333
+
+game
+    - gameid = 1111
+    - owner = 8009
+    - authorizedPlayers 
+        - 8009
+        - 1234
+        - 2345
+        - 4567
+
+permlink
+    aaaa: { 
+        originUid: 1234
+        gamelist: 3333, 
+    }
+
+gamelists
+    3333: {
+        permlinkcode: aaaa
+        userid: 1234
+        myGames: {
+            1111: IGameListEntry
+        }
+    }
+
+1st visit get my games:
+-----------------------
+get miabuser
+get gamelist => gamelist.ownerid == authid 
+get games
+get last game details
+
+
+2nd visit to site:
+-----------------------
+login as new anonymous user
+land on permlink page
+go to my completed games
+
+
+2nd visit get my games:
+-----------------------
+get miabuser -> null;
+getPermlinkGames(permlinkCode) {
+    return GameDetails(all of the details for each game and each scroll)
+    GameDetails.fullDataset = true;
+}
+
+3rd visit to site:
+-----------------------
+login as new anonymous user
+provide permlink code, validate
+request streamuser, submit permlink code; 
+    -> if permlink code already exists in streamuser object, let the user know it was replaced...
+play and complete game; 
+create maibuser with miabuser.permlinkcode && miabuser.gamelistid
+
+anonymous 
+    - isAnonymous = true
+    - authid = 4321
+    - permlinkcode = aaaa
+    - isPermlinkOriginUser = false
+    - gamelist = 3333
+
+game
+    - gameid = 1112
+    - owner = 8998
+    - authorizedPlayers 
+        - 8998
+        - 4321
+        - 2345
+        - 4567
+
+gamelists
+    3333: {
+        permlinkcode: aaaa
+        userid: 1234
+        myGames: {
+            1111: IGameListEntry
+            1112: IGameListEntry
+        }
+    }
+
+3rd visit get my games:
+-----------------------
+get miabuser 
+if miabuser.hasPermlinkCode() && !miabuser.originUid => submitPermlinkGamesRequest();
+
+
+
+/// -- Tasks -- //
+
+- Create cloud function to generate permlink codes:
+    - when a user is anonymous
+    - when they do not already have a permlink code assigned
+
+- Create cloud function to associate completed games with a users appropriate game IGameListEntry
+    - associate game to gamelist assigned to that permlink
+
+- Create a cloud function to retrieve permlink games and their details
+
+
+
+
+
+

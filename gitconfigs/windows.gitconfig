@@ -1,0 +1,20 @@
+[user]
+    name = Edwin Gathura
+    email = edwin.gathura@nasa.gov
+# Comment: You just added this via 'git config --global core.editor "code --wait"'
+[code]
+    editor = \"C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe\" --wait
+# Comment: End of You just added this block
+# Comment: This is the "Extra Block" to unlock VSCode as your git diff and git merge tool    
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = \"C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe\" \"$MERGED\" --wait
+[diff]
+    tool = vscode
+[difftool]
+    prompt = false
+[difftool "vscode"]
+    cmd= \"C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe\" \"$LOCAL\" \"$REMOTE\" --wait --diff 
+    trustExitCode = false
+# Comment: End of "Extra Block"

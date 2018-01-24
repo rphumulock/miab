@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": [
+      "../node_modules/@types/"
+    ]
+  },
+  "exclude": [
+    "node_modules/",
+    "devnotes/",
+    "prod/",
+    "pub/"
+  ],
+  "outDir": "webdev", 
+  "rootDir": ".", 
+  "compileOnSave": false, 
+  "buildOnSave": false, 
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}

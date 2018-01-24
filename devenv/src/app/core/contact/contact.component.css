@@ -1,0 +1,37 @@
+h1 {
+    font-size: 2.5em;
+    font-family: Kalam;
+    text-align: center;
+    padding-bottom: 20px;
+    color: white;
+    animation-delay: .3s;
+    animation-timing-function: ease;
+}
+
+#name-input, #email-input {
+    display: inline-block;
+    width: 49%;
+ 
+}
+
+#email-input {
+    float: right;
+}
+
+#subject-input {
+    margin-top: 25px;
+}
+
+textarea#message {
+    height: 100px;
+}
+
+#reCaptchaElem {
+    position: absolute;
+    margin-top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    
+}

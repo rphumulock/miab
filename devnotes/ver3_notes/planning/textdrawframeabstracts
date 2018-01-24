@@ -1,0 +1,36 @@
+functions:
+    - submitFrame
+    - ngOnInit 
+        -> getTheDetails
+        -> provideCallback = submitFrame
+
+    - ngAfterViewInit
+        -> processGameTurnDetails
+
+    - processGameTurnDetails
+
+    - displayPreviousFrame
+
+
+members:
+    - submitted
+    - details
+    - 
+
+    --------
+
+
+abstract gameturn.component class 
+    ->
+
+update subscription service to error handle failed frame submissions
+
+component injected drawing frame services:
+    - img queue
+    - resize editor
+    - drag events handler
+
+text frame component
+
+drawing frame component 
+

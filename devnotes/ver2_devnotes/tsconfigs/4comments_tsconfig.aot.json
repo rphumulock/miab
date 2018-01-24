@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": ["./node_modules/@types"]
+  },
+  /*
+   * Since we are doing AOT compilation there is an inherit issue with 
+   * the main.browser.aot.ts file. AppModuleNgFactory will not exist 
+   * until app.module.ts is compiled. 
+   * So we explcitly list is as part of the files property in this 
+   * config file. 
+   * We also include the "includes" property so we can allow compilation
+   * for the other typescript files.
+   * https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+   * https://angular.io/docs/ts/latest/guide/universal.html#!#configuration-aot
+   */
+  "files": [
+    "src/app/app.module.ts",
+    "src/main.browser.aot.ts"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules/",
+    "devnotes/",
+    "prod/",
+    "pub/",
+    "**/*.ngfactory.ts",
+    "**/*.shim.ts",
+    "src/app/main*.ts",
+    "**/*-aot.ts"
+  ],
+  "outDir": "webdev",
+  "rootDir": ".",
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  },
+  // This enables ahead-of-time compilation
+  // https://angular.io/docs/ts/latest/cookbook/aot-compiler.html
+  // https://github.com/blacksonic/angular2-aot-webpack
+  // https://angular.io/docs/ts/latest/guide/universal.html#!#configuration-aot/*
+
+  "angularCompilerOptions": {
+    "debug": false,
+    "genDir": "webdev",
+    "skipMetadataEmit": true,
+    "entryModule": "./src/app/app.module#AppModule"
+  }
+}

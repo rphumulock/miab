@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <p>Game Code: {{ gameCode }}</p>
+            <p>Player Count: {{ players.joined.length }}</p>
+          </div>
+          <div class="col-xs-6 text-right">
+            <a  [attr.href]="isLinkDisabled() ? null : '#'" [class.disabled]="isLinkDisabled()" (click)="!isLinkDisabled()&& startGame()" id="startGameLink">Start Game</a>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group" id="player-list" drag-scroll>
+          <li class="list-group-item" *ngFor="let player of players.joined">
+            <span>{{ player.index }}:{{ player.name }}</span>
+            <div class="clearfix"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<template #textModal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{ textModalTitle }}</h4>
+    <button type="button" class="close" (click)="close"></button>
+  </div>
+  <div id="textArea" class="modal-body text-center">
+    Sorry, there was an error with the game&hellip; Please try again.
+  </div>
+</template>

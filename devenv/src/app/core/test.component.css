@@ -1,0 +1,95 @@
+.card {
+    margin-top: 20%;
+    max-height: 60vh;
+  
+}
+
+.btn {
+    color: black; 
+}
+#AuthSessionComponents, 
+#UserAccountComponents, 
+#GameSpecificComponents {
+    width: 32%;
+    position: relative;
+    font-family: Kalam;
+    font-weight: bold;
+    z-index: 200;
+}
+
+#AuthSessionComponents {
+    position: absolute;
+    background: url("/img/miab-parchment.png") no-repeat;
+    background-size: 100% 100%;
+    top: 20%;
+    left: 5%;
+    height: 625px;
+    width: 450px;
+    opacity: .9;
+}
+
+#UserAccountComponents {
+    position: relative;
+    background: url("/img/miab-parchment.png") no-repeat;
+    background-size: 100% 100%;
+    top: 20%;
+    margin: 0 auto;
+    height: 625px;
+    width: 450px;
+    opacity: .9;
+   
+}
+
+#GameSpecificComponents {
+    position: absolute;
+    background: url("/img/miab-parchment.png") no-repeat;
+    background-size: 100% 100%;
+    top: 20%;
+    right: 5%;
+    height: 625px;
+    width: 450px;
+    opacity: .9;
+}
+
+
+.router-buttons {
+    position: absolute;
+    top: 25%;
+    padding: 0;
+    left: 4%;
+    width: 90%;
+   
+}
+
+.btn {
+    font-size: 1em;
+    
+}
+
+ h1 {
+    position: relative;
+    text-align: center;
+    
+    font-family: Lobster, cursive;
+    
+}
+
+.card-block {
+    overflow: auto;
+}
+ul li {
+    white-space: normal;
+}
+
+
+#logo {
+    position: absolute;
+    margin: 0 auto;
+    height: auto;
+    width: 20%;
+    left: 40%;
+    top: 1%;
+}
+
+
+

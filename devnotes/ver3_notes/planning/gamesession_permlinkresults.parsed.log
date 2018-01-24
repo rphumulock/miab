@@ -1,0 +1,207 @@
+/// **** --------- Initial Connection --------- **** ///
+---- Login Anonymously ---
+provider: firebase
+
+firebase.User object (truncated): 
+U {
+    j: "AIzaSyBQHZuhCKplCYc_9k0FLT63mmULm5BGvvI", 
+    D: "dev", 
+    v: "miab-angular-dev.firebaseapp.com", 
+    Ac: Array(1)
+    D: "dev"
+    displayName: null
+    email: null
+    emailVerified: false
+    identifierNumber: null
+    isAnonymous: true
+    photoURL: null
+    providerData: Array(0)
+    refreshToken: "ACXxpGEzqCMpZEd7sUNzQmy-Qo_..."
+    uid: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2"
+}
+
+---- Init UserSession Service ---
+UserSessionService {
+    projService: FirebaseProjectService, 
+    _authId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2", 
+    _isAnonymous: true
+    authId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2"
+    displayName: undefined
+    email: (...)
+    isAnonymous: true
+    isPermlinkUser: undefined
+    permlinkCode: undefined
+    photoUrl: (...)
+}
+
+---- Init GameSession Service ---
+using previous streamuser // <-- this is alright
+Returned GameStatus: none
+GameSessionService {
+    userSession: UserSessionService, 
+    firebaseProjs: FirebaseProjectService, 
+    initStreamUserObservable: function, 
+    readStreamUser: function, 
+    requestStreamUser: function…
+    gameRef: (...)
+    online: true
+    presenceRef: U
+}
+
+
+---- Mock a Played Game ---
+Game { 
+    currentFrame: -1
+    gameCode: "SF3XT"
+    gameId: "BR6JAZVY18"
+    gameState: "complete"
+    maxPlayers: 10
+    minPlayersReq: 5
+    ownerId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2"
+    playerCount: 1
+    players: Array(1) {
+        0: Object { 
+            playerName: "testplayer"
+            userId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2"
+        }
+        length: 1 
+    }
+    scrolls: Array(1) {
+        0: "UAZXNB8A3O"
+        length: 1
+    }
+    submissions: Array(11) {
+    0: 0
+    1: 0
+    2: 0
+    3: 0
+    4: 0
+    5: 0
+    6: 0
+    7: 0
+    8: 0
+    9: 0
+    10: 0
+    length: 11
+    }
+    timeStamp: Object
+}
+
+New Permlink code is: 00SF3XT
+--------- Logout -------------
+true // <-- from logout function
+
+/// **** --------- Initial Connection --------- **** ///
+---- Navigate Back with Permlink Url ----
+http://localhost:3000/permlinksessiontest;permlink=00SF3XT;permlink=00SF3XT
+
+relative url: permlinksessiontest;permlink=00SF3XT
+absolute url: http://localhost:3000/permlinksessiontest;permlink=00SF3XT
+base url: http://localhost:3000/
+
+---- Check Currently Logged in User ----
+user obejct returned is null!
+
+---- Check Currently UserSession Service ----
+Objective: Validate that the permlink code was properly read
+
+UserSessionService {
+    projService: FirebaseProjectService, 
+    permlinkCode: "00SF3XT", 
+    permlinkId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2",
+     _isPermlinkUser: true
+     authId: undefined
+     displayName: (...)
+     email: (...)
+     isAnonymous: false
+}
+
+---- Init UserSession Service ----
+You must login to test the user session service // <-- forgot to login 
+     
+---- Login Anonymously ----
+provider: firebase
+
+firebase.User object (truncated): 
+U {
+    j: "AIzaSyBQHZuhCKplCYc_9k0FLT63mmULm5BGvvI", 
+    D: "dev", 
+    v: "miab-angular-dev.firebaseapp.com", 
+    Ac: Array(1)
+    D: "dev"
+    displayName: null
+    email: null
+    emailVerified: false
+    identifierNumber: null
+    isAnonymous: true
+    photoURL: null
+    providerData: Array(0)
+    refreshToken: "ACXxpGHFj78QphaVrmhudmYFHpyv4HZa..."
+    uid: "3j0pYzJEVRY4kDJcqnAiOodcBl72"
+}
+
+---- Init UserSession Service ----
+UserSessionService {
+    projService: FirebaseProjectService, 
+    permlinkCode: "00SF3XT", 
+    permlinkId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2",
+     _isPermlinkUser: true
+     authId: "3j0pYzJEVRY4kDJcqnAiOodcBl72"
+     displayName: (...)
+     email: (...)
+     isAnonymous: false
+}
+
+---- Init GameSession Service ---
+requesting new stream user...
+Returned GameStatus: none
+GameSessionService {
+    userSession: UserSessionService, 
+    firebaseProjs: FirebaseProjectService, 
+    initStreamUserObservable: function, 
+    readStreamUser: function, 
+    requestStreamUser: function…
+    gameRef: (...)
+    online: true
+    presenceRef: U
+}
+
+---- Mock a Played Game ---
+Game { 
+    currentFrame: -1
+    gameCode: "73LCW"
+    gameId: "K2RYP0PJ94"
+    gameState: "complete"
+    maxPlayers: 10
+    minPlayersReq: 5
+    ownerId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2"
+    playerCount: 1
+    players: Array(1) {
+        0: Object { 
+            playerName: "testplayer"
+            userId: "LOFBJS7fm3W2zzyeDW1M9VLdlgL2"
+        }
+        length: 1 
+    }
+    scrolls: Array(1) {
+        0: "UAZXNB8A3O"
+        length: 1
+    }
+    submissions: Array(11) {
+    0: 0
+    1: 0
+    2: 0
+    3: 0
+    4: 0
+    5: 0
+    6: 0
+    7: 0
+    8: 0
+    9: 0
+    10: 0
+    length: 11
+    }
+    timeStamp: Object
+}
+
+Permlink is previous: 00SF3XT

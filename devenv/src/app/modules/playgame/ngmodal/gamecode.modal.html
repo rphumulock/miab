@@ -1,0 +1,22 @@
+<div class="modal-wrapper">
+    <div *ngIf="allowDismissal" class="dismiss-btn">
+        <a (click)="dismiss($event)">
+            <i class="fa fa-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="modal-body">
+        <div>
+            <form role="form" (ngSubmit)="submitRequest()" [formGroup]="gameCodeForm" novalidate>
+                <div class="form-content">
+                    <label (click)="select('gamecode')" for="gamecode">Game Code:</label>
+                    <input required id="gamecode" formControlName="gamecode" type="text" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()"
+                    [class.invalid]="formErrors.gamecode"  placeholder="Enter game code..." class="form-control">
+                    <label (click)="select('playerName')" for="playerName">Player Name:</label>
+                    <input required id="playerName" formControlName="playerName" type="text" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()"
+                    [class.invalid]="formErrors.playerName"    placeholder="Enter player name..." class="form-control">
+                    <button class="btn-lights" type="submit">{{ buttonMsg() }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

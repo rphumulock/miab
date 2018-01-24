@@ -1,0 +1,29 @@
+.container-fluid {
+    background: url(/img/MIAB-BG-white.png) no-repeat  fixed;
+    background-size: cover;
+    animation-duration: 30s;
+    animation-timing-function: ease;
+    animation-delay: 5s;
+}
+
+.logo {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    bottom: 8%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation-timing-function: ease;
+    animation-duration: 5s;
+    
+}
+
+.miab-logo {
+    height: auto;
+    width: 100%;
+    animation-delay: 1s;
+    animation-duration: 15s;
+    animation-timing-function: ease-in;
+ 
+}

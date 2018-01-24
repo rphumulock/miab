@@ -1,0 +1,90 @@
+#playerlist {
+    height: 85%;
+    overflow: auto;
+ 
+}
+#playerlist .list-group-item {
+    padding: 2%;
+    font-size: 4vw;
+    color: black;
+    background: rgba(255, 255, 255, 0.8);
+   /* text-shadow: 2px 2px 8px grey;*/
+} 
+
+
+@media screen and (max-width: 960px) {
+    .container-fluid {
+        background: url(/img/MIAB-BG-white-sm.png) no-repeat  fixed;
+        background-size: auto 100%;
+       
+    }
+
+    .cards {
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 20%;
+          transform: translateY(-20%);
+        -webkit-transform: translateY(-20%);
+      
+
+      
+        height: 80%;
+        width: 95%;
+       /* background: rgba(255,255,255,.3); */
+     
+  
+    }
+
+    .cards-header {
+        background: rgba(255,255,255, .5);
+        margin: 0;
+        padding: 1%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .cards-body {
+        background: rgba(255,255,255,.1);
+        margin: 0;
+        padding:2%;
+        width: 100%;
+    }
+
+    .cards-footer {
+        background: rgba(255,255,255, .5);
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    h1 {
+        font-family: Kalam;
+        color: black;
+        float: left;
+        margin: 0;
+        
+    }
+
+    .btndisabled {
+        background: rgb(199, 214, 226);
+    }
+
+    .game-code {
+        float: left;
+        font-family: kalam;
+        color: black;
+    }
+
+    .player-count {
+        float: right;
+        font-family: kalam;
+        color: black;
+    }
+
+    #start-btn {
+        position: absolute;
+        bottom: 0;
+        margin-top: 4%;
+        margin-bottom: 2%;
+        width: 96%;
+    }
+}

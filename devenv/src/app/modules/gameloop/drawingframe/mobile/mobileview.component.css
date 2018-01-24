@@ -1,0 +1,296 @@
+/***COMPONENT CONTAINER DIV***/
+#drawing-component {
+  width: 100%;
+  height: 100%;
+}
+
+/***LANDSCAPE NOT SUPPORTED OVERLAY***/
+#landscape-overlay {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+  /*background: url(/img/MIAB-Landscape-overlay.png) no-repeat center center fixed;
+  background-size: cover;*/
+}
+
+/***DRAWING BOARD***/
+#default-board {
+  height: 80%;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  margin: 0 auto;
+  width: 100%;
+  top: 0;
+  opacity: .9;
+}
+
+#submit-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 3.5vw;
+  padding: .3em;
+  margin-top: 4%;
+  margin-right: 2%;
+}
+
+
+
+/***EMOJI CONTROLS***/
+/*Emoji Controls Container*/
+#emoji-controls {
+  width: 100%;
+  height: 90%;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1000;
+  padding: 0;
+  background:black;
+  top:  0; 
+  transition: 0.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-out;
+}
+
+/*Emoji Controls - Resize Controls Container*/
+#resize-controls {
+  margin: 0 auto;
+  width: 98%;
+  height: 49%;
+  -webkit-box-shadow: 0px -1px 3px 1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px -1px 3px 1px rgba(0,0,0,0.2);
+  box-shadow: 0px -1px 3px 1px rgba(0,0,0,0.2);
+  background: white;
+  opacity: .9;
+  margin-bottom: 1%;
+}
+
+/*Emoji Controls - Resize Controls - Resize Area Containter*/
+#resize-area {
+  position: relative;
+  width: 100%;
+  height: 74.5%;
+  background: white;
+  display: block;
+  padding: 0;
+}
+
+/*Emoji Controls - Resize Controls - Instructions*/
+#resize-area ol {
+  padding-top: 2%;
+  font-size: 3.5vw;
+  font-family: Kalam;
+  margin: 0;
+}
+
+/*Emoji Controls - Resize Controls - Resizable Image*/
+#resize-area img {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+  
+/*Emoji Controls - Resize Control Box Container*/  
+#control-box {
+  width: 100%;
+  height: 25%;
+  bottom: 0;
+}
+
+/*Emoji Controls - Resize Control Box - Controls*/
+#resize-slider {
+  width: 98%;
+  padding: 1%;
+  margin-left: 1%;
+}
+
+/*Emoji Controls - Resize Button*/
+#resize-btn {
+  width: 48%;
+  float: left;
+  margin: 0;
+  margin-left: 1%;
+  font-size: 4vw;
+}
+
+/*Resize Controls - Done Resizing Button*/
+#resizefinished-btn {
+  width: 48%;
+  float: right;
+  margin: 0;
+  margin-right: 1%;
+  font-size: 4vw;
+}
+
+/*Emoji Controls - Emoji Grid Container*/
+#emoji-container {
+  width: 98%;
+  height:49.5%;
+  background: white;
+  margin: 0 auto;
+  margin-top: 1%;
+  text-align: center;
+  margin-bottom: 1.5%;
+  position: relative;
+}
+
+#emoji-list {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+#emoji-list-msg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2%;
+  font-family: Lobster;
+}
+
+/*Emoji Controls - Emoji Block Div*/
+.emoji-div {
+  display: inline-block;
+  width: 12.5%;
+  height: auto;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+/*Emoji Controls - Emoji Block Div Img*/
+.emoji-div img {
+  width: 100%;
+  height: 100%;
+}
+
+/*Emoji Controls - Pagination Container (nested within LastFrame)*/
+#scroll-btns {
+
+}
+
+/*Emoji Controls - Pagination Buttons (nested within LastFrame)*/
+#scroll-btns button {
+  font-size: 10vw;
+  padding: 0;
+  border-radius: 100%;
+  width: 12vw;
+  height: 12vw;
+  text-align: center;
+  vertical-align: middle;
+  margin: 2vw;
+}
+
+
+
+/***DRAWING FRAME - CONTROL BAR***/
+#control-bar {
+  width: 100%;
+  height: 20%;
+  position: relative;
+}
+
+/*Control Bar - Emoji Queue*/
+#img-queue {
+  width: 15%;
+  height: 100%;
+  background:rgba(33, 37, 41, 1);
+  position: absolute; 
+  box-shadow: inset 0 0 1px #000000;
+  color: white;
+}
+
+/*Control Bar - Emoji Queue - Label*/
+#img-queue p {
+  font-size: 5vw;
+  line-height: 4.5vw;
+  color: white;
+  text-align: center;
+  font-family: lobster;
+  position: absolute;
+  top: 15%;
+  transform: translateY(-15%);
+ 
+}
+
+/*Control Bar - Emoji Queue - Queue Img*/
+#img-queue img {
+  width: 65%;
+  height: auto;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 15%;
+  transform: translateY(-15%);
+}
+
+/*Control Bar - Last Frame Text Box*/
+#last-frame {
+  position: absolute;
+  bottom: 0;
+  left:15%;
+  width: 70%;
+  height: 100%;
+  background: white;
+  overflow-y: auto;
+  box-shadow: inset 0 0 3px #000000;
+  text-align: center;
+}
+
+/*Control Bar - Last Frame Text*/
+#last-frame p {
+  font-family: Kalam;
+  font-size: 3.5vw;
+  padding: 1.5%;
+  line-height: 4vw;
+}
+
+/*Control Bar - Emoji Button Container*/
+.emoji-btn {
+  width: 15%;
+  height: 100%;
+  position: relative;
+  float: right;
+  padding-bottom: 10%;
+  font-size: 3vw;
+  
+}
+
+/*Control Bar - Emoji Button*/
+#emoji-btn {
+  width: 100%;
+  height: 100%;
+  font-family: Lobster;
+}
+
+/*Control Bar - Emoji Button Icon*/
+#emoji-btn-icon {
+  position: absolute;
+  margin: 0 auto;
+  line-height: normal;
+  top: 10%;
+  left: 0px;
+  right: 0px;
+
+}
+
+
+
+
+
+
+
+
+   
+
+
+

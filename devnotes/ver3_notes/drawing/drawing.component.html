@@ -1,0 +1,44 @@
+<div class="flex-container mx-auto">
+  <div class="text-center">
+    <h4>welcome to the drawing test component</h4>
+    <div style="width: 60%" id="default-board"></div>
+    <br/>
+    <button class="btn btn-primary-outline" (click)="submitFrame(true)">Submit</button>
+    <br/><br/>
+    <br/><br/>
+  </div>
+  <div id="emojiList" class="row">
+    <div class="col-s-4" *ngIf="setupEmojiList">
+      <ul>
+          <li *ngFor="let icon of emojis" >
+            <img [id]="icon.id" class="emoji" draggable=true [alt]="icon.alt" [src]="icon?.dataUrl"  
+            (dragstart)="dragEvents.dragstart($event, icon)" (touchend)="touchEvents.touchend($event, icon)" 
+            (click)="imgQueue.queueEmoji($event, icon)">
+          </li>
+      </ul>
+    </div>
+    <div style="padding-left: 10%" id="resizeEditor">
+      <div id="resizeArea" (drop)="resizeEditor.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+        drop imges to be resized inside of here...
+      </div>
+      <div>
+        <input (change)="resizeEditor.sliderChanged($event)" id="resize-slider" type="range" [value]="sliderValue" min="-100" max="100">
+      </div>
+      <div>
+        <button [attr.href]="resizeEditor.doneEditingEnabled() ? '#' : null" 
+        [class.disabled]="resizeEditor.doneEditingEnabled()" 
+        (click)="resizeEditor.doneEditingEnabled() && resizeEditor.doneEditing(imgQueue)">Done Editing</button>
+      </div>
+    </div>
+    <div>
+      <div id="imgQueue" (drop)="imgQueue.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+        image queue
+      </div>
+      <div>
+        <button [attr.href]="imgQueue.editButtonEnabled() ? '#' : null" 
+        [class.disabled]="imgQueue.editButtonEnabled()" 
+        (click)="imgQueue.editButtonEnabled() && imgQueue.editImage(resizeEditor)">Resize</button>
+      </div>
+    </div>
+  </div>
+</div>

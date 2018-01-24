@@ -1,0 +1,96 @@
+<div id="drawing-component">
+  <div *ngIf="isLandscape" id="landscape-overlay"></div>
+  <div id="default-board"></div>
+
+  <button class="btn-lights" id="submit-btn" (click)="submitFrame(true)">SUBMIT</button>
+
+  <div id="emoji-controls" [style.margin-top]="openControls ? '0px' : '-1000px'">
+
+    <div id="resize-controls">
+
+      <div id="resize-area" (drop)="resizeEditor.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+        <ol>
+          <li>Touch an emoji to add it to your Emoji Queue.</li>
+          <li>Drag an emoji from the queue to add it to your drawing.</li>
+          <li>Use the Resize Button to move emoji from emoji queue to resize area.</li>
+          <li>Drag the slider to resize your emoji.</li>
+          <li>Use the Done Resizing button to save your edit to the emoji queue. </li>
+          <li>Drag your resized emoji from the queue to your drawing.</li>
+          <li>Good luck and have fun!</li>
+        </ol>
+      </div>
+
+      <div id="control-box">
+
+        <div>
+          <input (change)="resizeEditor.sliderChanged($event)" id="resize-slider" type="range" [value]="sliderValue" min="-50" max="100">
+        </div>
+
+        <div>
+          <button class="btn-lights" id="resize-btn" [attr.href]="imgQueue.editButtonEnabled() ? '#' : null" [class.disabled]="imgQueue.editButtonEnabled()"
+            (click)="imgQueue.editButtonEnabled() && imgQueue.editImage(resizeEditor)">1. Resize</button>
+        </div>
+
+        <div>
+          <button class="btn-lights" id="resizefinished-btn" [attr.href]="resizeEditor.doneEditingEnabled() ? '#' : null" [class.disabled]="resizeEditor.doneEditingEnabled()"
+            (click)="doneEditingWrapper()">2. Done Resizing</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="emoji-container">
+      <div id="emoji-list-msg" *ngIf="!setupEmojiList">
+        {{ collectionMsg }}
+        <div class="load-bar">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      
+      <div id="emoji-list" *ngIf="setupEmojiList">
+        <div *ngFor="let icon of emojis" class="emoji-div" >
+          <img [id]="icon.id" class="emoji" draggable="true" [alt]="icon.alt" [src]="icon?.dataUrl" (dragstart)="dragEvents.dragstart($event, icon)"
+            (click)="imgQueue.queueEmoji($event, icon)">
+        </div>
+      
+        <div id="scroll-btns">
+          <button (click)="previousEmojis()" [class.disabled]="!backAvail()" class="btn-lights" id="scroll-btn-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></button>
+          <button (click)="nextEmojis()" [class.disabled]="!nextAvail" class="btn-lights" id="scroll-btn-right"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+  <div id="control-bar">
+
+    <div id="img-queue" (drop)="imgQueue.drop($event)" (dragover)="dragEvents.allowDrop($event)">
+      <p>Emoji Queue</p>
+    </div>
+
+    <div id="last-frame">
+      <p *ngIf="!openControls" >This is a test. This is a test. This is a test. 
+        This is a test. This is a test. This is a test. 
+        This is a test. This is a test. This is a test. 
+        This is a test. This is a test. This is a test.</p>
+        
+    </div>
+
+    <div class="emoji-btn">
+      <button *ngIf="!openControls" (click)="toggleControls()" class="btn-darks" id="emoji-btn">
+          <i id="emoji-btn-icon" class="fa fa-smile-o" aria-hidden="true"></i>Emojis
+      </button>
+      <button *ngIf="openControls" (click)="toggleControls()" class="btn-darks" id="emoji-btn">
+            <i id="emoji-btn-icon" class="fa fa-smile-o" aria-hidden="true"></i>Close
+        </button>
+      <!--<i id="emoji-btn-icon" class="fa fa-smile-o" aria-hidden="true"></i>-->
+    </div>
+  </div>
+
+</div>

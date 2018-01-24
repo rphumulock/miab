@@ -1,0 +1,10 @@
+Original: 2017Dec17
+
+Flows:
+
+
+    -> current login
+        -> send auth service event
+        -> 
+
+

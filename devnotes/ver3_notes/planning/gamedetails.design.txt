@@ -1,0 +1,117 @@
+permlink:
+
+- remove generatePermlinkCode from usersession.service.ts
+- create server side implementation of generatePermlinkCode
+- append to miabuser object if persistenting an anonymous user (done once)
+- provide to user as part of profile details retreival for gamelist id info
+- on permlink provided on landing
+    - exists === true; return permlinkAuthId
+    - update db.ref(miabusers/permlinkAuthId/tenant).set(authid)
+
+db rule appends:
+
+- miabuser 
+    - read access:
+        - if authid !== miabuser.authid && miabuser.isanonymous
+            - return authid === miabuser.tenant
+
+- gamelist | scrolls | games 
+    - read access:
+        - if authid !== (this object).(ownerid|userid) e.g. authid !== game.ownerid
+            - authid === root.ref(maibuser/authid/tenant).val()
+
+- permlinkcode
+    - write access:
+        - admin only (no rule)
+    - read access:
+        - anyone
+
+
+
+
+
+////---////---////---//// Explaining DB Rules Issue for Anonymous Users ////---////---////---////
+
+
+
+root.child('miabuser/auth.uid/gamelist').val() ==> gameListId
+
+root.hasChild('gamelist/{gameListId}/myGames/' + gameId)
+
+data.hasChild('authorizedPlayers/' + authId)
+
+1st visit to site:
+-----------------------
+login as anonymous
+play and complete game, then miabuser object is created
+no permlink code, so a new one is created
+
+anonymous 
+    - isAnonymous = true
+    - authid = 1234
+    - permlink code = aaab
+     - gamelist 
+        - myGames
+            - 1111
+    - association = 4321
+
+game
+    - gameid = 1111
+    - owner = 8009
+    - authorizedPlayers 
+        - 8009
+        - 1234
+
+
+
+2st visit to site:
+-----------------------
+login again as anonymous
+at some point u provide the permlink code
+    - i update the permlink user miab object association property
+play and complete game, then a miabuser is created
+a permlink code was already associated so new one none is created
+
+anonymous 
+    - isAnonymous = true
+    - authid = 4321
+    - permlink code = aaab
+    - gamelist 
+        - myGames
+            - 2222
+    - association = 1234
+
+game
+    - gameid = 2222
+    - owner = 9008
+    - authorizedPlayers 
+        - 9008
+        - 4321
+
+load my games, including those played with prior permlink code
+- easy to validate games in miabusers gamelist; part of authorizedPlayers
+- problems:
+    - magically i found out that 1111 is one of my games
+    - get my miab user object
+    - if i have an association 
+        - check if game.owner or game.authorizedPlayers === association 
+
+3rd visit to site:
+-----------------------
+you register
+at some point u provide the permlink code
+    - i update the anonymous user miab object landlord property
+
+registered user
+    - authid = 7767
+
+
+    
+
+
+
+
+
+
+
+

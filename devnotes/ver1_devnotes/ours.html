@@ -1,0 +1,9 @@
+<form class="form-inline" role="form" (ngSubmit)="submitForm()" [formGroup]="loginForm" novalidate>
+	<div class="form-group">
+        <label class="sr-only" for="subscribe-email">Email address</label>
+          <input type="email" formControlName="email" class="sd-form-control" placeholder="Enter your email.">
+    	<input type="text" name="email" placeholder="Enter your email..." class="subscribe-email form-control" id="subscribe-email">
+        <button  class="btn" type="submit">Submit</button>
+
+</div>
+</form>

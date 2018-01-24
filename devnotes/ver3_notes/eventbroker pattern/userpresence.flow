@@ -1,0 +1,17 @@
+Original: 2017Nov25
+
+Flows:
+
+
+
+    -> online
+        -> validate game
+        -> set user status to err 
+        -> wait, 500, rebuild user. ** needs to be done **
+
+    -> offline 
+        -> if hosting
+            -> set game to err
+        -> if inqueue 
+            -> wait
+            -> submit pirate request

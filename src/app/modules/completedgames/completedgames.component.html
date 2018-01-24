@@ -1,0 +1,48 @@
+
+<div class="card">
+    <div class="cards-header">
+        <div *ngIf="enableGameCodeBox" id="gameCode">Game Code: {{ collection.gameCode }}</div>
+    </div>
+
+    <div class="cards-block">
+        <div class="acc-bar" [class.openordaccordian]="activeAccordian.first">
+            <h2 (click)="toggleAccordian(1)">Games</h2>
+            <div *ngIf="first">
+                <div class="scroll-border text-center">
+                    <div class="scroll" drag-scroll drag-scroll-y-disabled="true" scrollbar-hidden="true">
+                        <img *ngFor="let game of collection.Games" (click)="clickGame(game)" src="/img/starwars.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <div class="acc-bar" [class.openordaccordian]="activeAccordian.second">
+            <h2 (click)="toggleAccordian(2)">Scrolls</h2>
+            <div *ngIf="second" >
+             
+                    <div class="scroll-border text-center">
+                        <div class="scroll" drag-scroll drag-scroll-y-disabled="true" scrollbar-hidden="true">
+                            <img *ngFor="let scroll of scrolls" (click)="clickScroll(scroll)" src="/img/starwars.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="acc-bar" [class.openordaccordian]="activeAccordian.third">
+            <h2 (click)="toggleAccordian(3)">Frames</h2>
+            <div *ngIf="third" >
+             
+                    <div class="scroll-border text-center">
+                        <div class="scroll" drag-scroll drag-scroll-y-disabled="true" scrollbar-hidden="true">
+                            <img *ngFor="let frame of frames" (click)="clickFrame(frame)" src="/img/starwars.jpg"> 
+                            <!--<div *ngFor="let frame of frames" (click)="clickFrame(frame)">
+                                <img src="/img/starwars.jpg">
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="card-footer">
+</div>
+</div>  

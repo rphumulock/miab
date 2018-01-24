@@ -1,0 +1,48 @@
+Original: 2017Dec05
+
+Flows:
+
+    -> login to continue
+        -> broadcast new usersession redirect 
+        -> login fails
+    -> broadcast error { reset: false, redirect: login }
+    -> route login 
+        -> current login -> false -> continue route (always continues);
+        -> route correction -> continue route
+    -> capture login as anonymous/user
+    -> async authservice
+        -> login via provider
+        -> broadcast firebase.User
+    -> async userssion service
+        -> receive firebase.User event
+        -> broadcast remote logger event
+        -> broadcast start route
+         
+    -> authservice 
+        -> login w/ parameters
+        -> error 
+            -> broadcast error { redirect: error }
+
+
+
+    -> logout
+        -> broadcast user auth w/null
+        -> user session 
+            -> receives userauth event w/null
+            -> reset values 
+            -> broadcast remote logger event
+        -> broadcast game session reset
+        -> game session manager 
+            -> receive reset event
+            -> reset all subscriptions
+
+
+
+    -> current login 
+        -> receive event
+        -> if event.redirect  
+            -> broadcast redirect queue
+        -> check current
+            -> broadcast user
+
+    

@@ -1,0 +1,15 @@
+<!-- Dropdown Trigger -->
+<div  *ngIf="visible">     
+<a (click)="toggleActive($event)" class="settingsicon" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-gear fa-2x animated fadeInRight"  aria-hidden="true"></i></a>
+   
+    <!-- Dropdown Menu -->
+    <div class="settingsmenu animated fadeInRight" [class.isActive]="isActive" (focusout)="toggleToInActive()" id="settingsmenu">
+        <!--<hr id="settings-line">-->
+        <a (click)="navHome($event)" class="dropdown-item"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a (click)="navUserProifle($event)" [class.disabled]="!allowUserProfile" class="dropdown-item"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+        <a (click)="navToCompletedGames($event)"  [class.disabled]="!allowCompletedGames"  class="dropdown-item"><i class="fa fa-archive" aria-hidden="true"></i> Completed Games</a>
+        <!--<a class="dropdown-item"><i class="fa fa-sign-out" aria-hidden="true"></i> Login/Sign Up</a>-->
+        <a (click)="navUserSession($event)" class="dropdown-item"><i class="fa fa-sign-out" aria-hidden="true"></i> {{ accountOption }}</a>
+    </div>
+</div> 

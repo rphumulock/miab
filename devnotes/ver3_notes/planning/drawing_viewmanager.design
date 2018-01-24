@@ -1,0 +1,106 @@
+// +++++++++++ ################### +++++++++++++++ //
+// ----------- Current Setup --------------- //
+// +++++++++++ ################### +++++++++++++++ //
+
+/**
+* Editor Service Roles
+ - drop function for div
+ - done editing callback for button
+ - done editing button is enabled function
+ - slider changed callback
+ - empty img editor function
+ - add img to editor function
+ - update img size function
+ - calc aspect ratio
+* Members
+ - resize Target
+ - original size: ImgAttributes
+ - resize Div
+* Service Dependencies
+ - dragevents handler service
+ - img queue service on drop editing handler
+ - 
+*/
+
+/**
+* Drag Events Service Roles
+ - allow drop function -> event.preventDefault
+ - drag event start -> save img size
+ - 
+* Members
+ -
+* Service Dependencies
+ -
+*/
+
+/**
+* Img Queue Service Roles
+ - edit image button callback
+ - edit button enabled callback
+ - edit div drop listener
+ - emoji click add to queue callback
+ - add img to queue functions
+ - 
+* Members
+ - img queue array
+ - img queue div element
+* Service Dependencies
+ - dragevents handler service
+ - resize editor on edit image button handler
+ - 
+*/
+
+// +++++++++++ ################### +++++++++++++++ //
+// ----------- New Design Proposal --------------- //
+// +++++++++++ ################### +++++++++++++++ //
+
+/**
+* 
+* Problems:
+* Img editor slider does not resize
+* 
+* Issues:
+* Manage queue across all services
+* Manage img editor events
+* 
+*/
+
+/**
+* View Manager Service Proposal
+ - 
+ - update drawingboard.js
+ - update twemoji.service.simpleRequestResponse to parse imgattributes
+
+* Members
+ - 
+ -
+ - 
+* Service Dependencies
+ - editor service
+ - drag events service
+ - img queue service
+ - 
+*/
+
+/**
+* View Manager Service Completed
+ - update img editor to use emoji as resize target 
+ - update img editor with its own drag start event handler to read local emoji and pass to dragevents service eventhandler
+ - update interface to emoji object add new imgproperties interface
+ - edit image button helper for img queue service
+ - update img queue with its own drag start 
+ - done editing helper for img editor service 
+ - update template dragstart events for emojis
+ - update template mouseclick events for emojis
+ - update img queue to use Map<string: emoji.id, emoji>
+ - update drawingboard.js
+
+* New Members
+ - 
+ -
+ - 
+*/
+
+
+
+

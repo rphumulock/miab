@@ -1,0 +1,52 @@
+<div class="cards animafed fadeIn">
+    <div class="cards-header">
+        <h1 class="animated zoomIn">Create an Account</h1>
+    </div>
+    <div class="cards-body">
+        <form [formGroup]="signUpForm">  
+            <div class="md-form animated fadeIn" id="display-name-input">
+                <input id="display-name" formControlName="displayName" type="text" class="form-control" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()">
+                <label for="displayName">Username</label>
+                <div *ngIf="formErrors.displayName" class="input-error"><small>{{ formErrors.displayName }}</small></div>           
+            </div> 
+
+            <div class="md-form animated fadeIn" id="email-input">
+                <input id="email" formControlName="email" type="text" class="form-control" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()">
+                <label for="defaultForm-email">Email</label>
+                <div *ngIf="formErrors.email" class="input-error"><small>{{ formErrors.email }}</small></div>           
+            </div> 
+
+            <div class="md-form animated fadeIn" id="password-input">
+                <input type="password" id="password" formControlName="password" class="form-control" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()">
+                <label for="defaultForm-pass">Password</label>
+                <div *ngIf="formErrors.password" class="input-error"><small>{{ formErrors.password }}</small></div>
+            </div>
+
+            <button [class.disabledBtn]="signUpForm.invalid" class="btn-lights animated  bounceIn waves-effect" id="signup-btn" type="submit" (click)="createAccount()">SIGNUP</button>
+            <p class="nav-links animated fadeIn">Already have an account? <a routerLink="/accounts/login">Sign In!</a> </p>
+        </form>
+    </div>
+    <div class="cards-footer"></div>
+</div>    
+      
+         
+            <!-- <form role="form" [formGroup]="signUpForm" novalidate>
+                <div class="form-content text-center">
+                    <label for="displayName">Username (used to find friends):</label>
+                   <input id="displayName" formControlName="displayName" type="text" placeholder="Enter a username..." class="subscribe-email form-control"
+                        required>
+                    <small *ngIf="formErrors.displayName" class="error">{{ formErrors.displayName }}</small>
+
+                    <input id="email" formControlName="email" type="text" placeholder="Enter Email" class="subscribe-email form-control" required>
+                    <div *ngIf="formErrors.email" class="error"><small>{{ formErrors.email }}</small></div>
+
+                    <input id="password" formControlName="password" type="password" placeholder="Enter Password" class="form-control" required>
+                    <div *ngIf="formErrors.password" class="error"><small>{{ formErrors.password }}</small></div>
+                </div>
+            </form>
+        </div>
+
+    
+            <button [class.disabledBtn]="signUpForm.invalid" class="btn btn-success animated zoomIn" id="createBtn" type="submit" (click)="createAccount()">Create Account</button> -->
+ 
+ 

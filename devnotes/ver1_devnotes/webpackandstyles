@@ -1,0 +1,56 @@
+
+
+-> Anuglar2 
+    -> View Encapsulation? ... CSS -> Yes @Component({ ViewEncapsulation.{Native, None, Emulated} })
+    -> 
+
+
+
+-> Saturday
+    -> GChat Meeting
+
+
+new webpack.LoaderOptionsPlugin({
+      test: /\.css$/,
+      options: {
+        postcss: [
+          require('postcss-import')(),
+          require('postcss-url')(),
+          require('postcss-cssnext')({
+            browsers: 'last 2 versions'
+          }),
+          require('precss')
+        ],
+        context: __dirname
+      }
+    }),
+
+
+    /*
+      { test: /\.css$/, //loaders: ['to-string-loader','style-loader', 'css-loader', 'group-css-media-queries-loader'] },
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader:[
+            {
+            loader: 'css-loader',
+            options: {
+                modules: true,
+                importLoaders:1
+              }
+            },
+            {
+              loader: 'postcss-loader'
+            }
+          ]
+        })
+      },*/
+
+/*
+      {
+        test: /\.(gif|png|jpg|jpeg\ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: 'file-loader'
+      }*/
+
+
+  <script async src="main.bundle.js"></script>
+

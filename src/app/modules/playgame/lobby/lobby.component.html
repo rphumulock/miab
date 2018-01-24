@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  
+    <div class="cards" id="game-lobby">
+        <div class="cards-header">
+            <h1>Game Lobby</h1>
+            <div class="game-code">Game Code: {{ gameCode }}</div>
+            <div class="player-count">Players: {{ playerCount }}/10</div>
+        </div>
+
+        <div class="cards-body">
+            <ul class="list-group" id="playerlist">
+                <li [class.my-entry]="player.userId === userSession.userId"
+                class="list-group-item list-group-flush" *ngFor="let player of players | async">
+                    <span class="align-middle">{{ index }} - {{ player.playerName }}</span>
+                </li>
+            </ul>
+            <button *ngIf="!gameSession.isHosting" class="btn-lights btndisabled">Waiting for Host...</button>
+            <button *ngIf="gameSession.isHosting" [class.btndisabled]="!gameSession.readyToStartGame" (click)="submitStartGame()" class="btn-lights" id="start-btn">Start Game</button>
+        </div>
+
+        <div class="cards-footer"></div>
+    </div>
+</div>  
+              
+                   
+                          
+                       
+                     
+                            
+                        
+                   
+              
+                
+                   
+               

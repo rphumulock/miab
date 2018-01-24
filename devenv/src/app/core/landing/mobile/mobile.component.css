@@ -1,0 +1,120 @@
+
+.logo {
+        width: 90%;
+        height: 25%;
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        animation-timing-function: ease;
+        animation-duration: 5s;
+        
+    }
+
+    .miab-logo {
+        height: auto;
+        width: 100%;
+        animation-delay: 1s;
+        animation-duration: 5s;
+        animation-timing-function: ease-in;
+     
+    }
+
+    .coming-soon {
+        animation-delay: 2s;
+        animation-duration: 2s;
+        animation-timing-function: ease-in;
+        position: relative;
+        top: 0;
+    }
+    
+    
+    .landing-cloud {
+        position: absolute;
+        top: 0;
+        left: 2%;
+        animation-delay: 3s;
+        animation-duration: 12s;
+        animation-timing-function: ease-in;
+        width: 57%;
+        height: auto;
+    }
+
+    .logo-phone {
+        position: relative;
+        top: 5%;
+        
+        animation-timing-function: ease;
+        animation-duration: 5s;
+        z-index: 100;
+        
+    }
+    
+    .miab-phone {
+        position: absolute;
+        right: 0;
+        
+        height: auto;
+        width: 55%;
+        animation-delay: 1s;
+        animation-duration: 25s;
+        animation-timing-function: ease-in;
+        z-index: 100;
+     
+    }
+    
+    /*.game-menu {
+        width: 95%;
+        height: 50%;
+        background: white;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }*/
+
+    /*.slant {
+          width: 125%;
+          height: 30%;
+          -webkit-transform: skew(20deg); 
+             -moz-transform: skew(20deg);
+               -o-transform: skew(20deg);
+        background: rgba(34, 74, 157, .9);
+        
+        text-align: left;
+        padding: 4%;
+        box-sizing: border-box;
+        
+       margin: 4%;
+       box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+       transition: 2s;
+        
+      }
+
+      h1 {
+        font-family: Kalam;
+        color: white;
+        font-size: 8vw;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0;
+        margin-top: 1.5%;
+
+      }
+
+      #guest-play {
+          margin-left: 7%;
+      }
+
+      #login-btn {
+          margin-left: 22%;
+      }
+
+      #signup-btn {
+          margin-left: 37%;
+      }*/
+
+
+    
+

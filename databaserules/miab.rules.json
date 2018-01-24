@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "userpermlinkcodes": {
+      ".read": "auth != null",
+      "$usercode": {
+        ".write": "newData.val() === auth.uid"
+      }
+    },
+    "gamecodes": {
+      ".read": true
+    }
+  }
+}

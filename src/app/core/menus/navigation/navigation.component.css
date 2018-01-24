@@ -1,0 +1,258 @@
+
+.hamburger {
+  z-index: 10006;
+  padding-top: 22px;
+  padding-left: 20px;
+  padding-right: 0px;
+  display: inline-block;
+  position: fixed;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  margin-top: 0;
+  margin-left: 0;
+  top: 0;
+  left: 0;
+  overflow: visible;
+ }
+  
+  .hamburger:hover {
+    opacity: 0.6;
+  
+  }
+
+  .hamburger-inner:hover, .hamburger-inner:hover::before, .hamburger-inner:hover::after {
+    background-color: black;
+  }
+
+.hamburger-box {
+  width: 30px;
+  height: 20px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 30px;
+    height: 4px;
+    background-color: grey;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+    .hamburger--3dx .hamburger-box {
+  z-index: 10000;
+  perspective: 80px; }
+
+.hamburger--3dx .hamburger-inner {
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .hamburger--3dx .hamburger-inner::before, .hamburger--3dx .hamburger-inner::after {
+    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.hamburger--3dx.isActive .hamburger-inner {
+  background-color: transparent;
+  transform: rotateY(180deg); }
+  .hamburger--3dx.isActive .hamburger-inner::before {
+    transform: translate3d(0, 10px, 0) rotate(45deg); }
+  .hamburger--3dx.isActive .hamburger-inner::after {
+    transform: translate3d(0, -10px, 0) rotate(-45deg); }
+
+.sidenav {
+  height: 70px; 
+  width: 100%;
+  position: fixed;
+  z-index: 10004;
+  top: 0;
+  left: 0;
+  background-color: rgba(39, 85, 168, 1);
+  overflow-x: hidden;
+  
+  transition: 0.5s;
+  margin-top: -100px;
+  margin-left: 70px;
+  animation-timing-function: ease-in-out;
+}
+
+#nav-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 5px;
+}
+
+.fa {
+  font-size: 4em;
+  color: white;
+}
+
+
+.slant {
+  position: absolute;
+	width: 120px;
+	height:70px;
+	-webkit-transform: skew(20deg); 
+	   -moz-transform: skew(20deg);
+	     -o-transform: skew(20deg);
+  background: rgba(77, 154, 219, 1);
+  top: 0;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 2px;
+}
+
+#nav-links {
+  margin-left: 30px;
+}
+
+#facebook {
+  left: 260px;
+}
+
+#twitter {
+  left: 385px;
+}
+
+#instagram {
+  left: 510px;
+}
+
+#contactus {
+  left: 635px;
+}
+
+
+
+.slant:hover {
+  background: rgba(77, 154, 219, .8);
+}
+
+.fa:hover {
+  color:rgba(39, 85, 168, 1);
+}
+
+
+h1 {
+  color: white;
+  position: absolute;
+
+  margin-left: 20px;
+  font-size: 3em;
+  padding-right: 0;
+  font-family: Lobster, cursive;
+}
+
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:black; /* Black background with opacity */
+    z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    opacity: .8;
+    animation-timing-function: ease-in-out;
+    margin-top: 70px;
+}
+
+.sidenav.isActive {
+  margin-top: 0;
+  animation-timing-function: ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hamburger.isActive {
+  position: absolute;
+ 
+  transition: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+#overlay.isActive {
+  display: block;
+}
+
+
+/*NAVIGATION COMPONENT MEDIA QUERIES*/
+@media screen and (max-width: 960px) {
+  .hamburger {
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 0px;
+  }
+
+  .sidenav {
+    margin-left: 52px;
+  }
+  h1 {
+    color: white;
+    position: absolute;
+    padding-top: 10px;
+    font-size: 2em;
+    padding-right: 0;
+    font-family: Lobster, cursive;
+    margin-left: 10px;
+  }
+
+  #nav-links {
+    width: 50vw;
+  }
+  .slant {
+    position: absolute;
+    width: 15%;
+    height:70px;
+    -webkit-transform: skew(20deg); 
+       -moz-transform: skew(20deg);
+         -o-transform: skew(20deg);
+    background: rgba(77, 154, 219, 1);
+    top: 0;
+    text-align: center;
+   
+    padding-top: 17px;
+  }
+
+.fa {
+  font-size: 2em;
+  color: white;
+}
+
+#facebook {
+  left: 40vw;
+}
+
+#twitter {
+  left: 50vw;
+}
+
+#instagram {
+  left: 60vw;
+}
+
+#contactus {
+  left: 70vw;
+}
+}

@@ -1,0 +1,62 @@
+<div class="cards animated fadeIn">
+    <div class="cards-header">
+        <h1>Contact Us</h1>
+    </div>
+
+    <div class="cards-body">
+        <div *ngIf="isSubmitted" id="successMsg">
+            <p>Thank you!!</p>
+        </div>
+
+        <div *ngIf="showError">
+            <p>Oh no something went wrong! Try again...</p>
+            <button (click)="displayForm()">Try Again</button>
+        </div>
+
+        <div *ngIf="!isSubmitted">
+            <form [formGroup]="contactUsForm">
+                <div class="md-form animated fadeIn" id="name-input">
+                    <input id="name" formControlName="name" type="text" class="form-control" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()">
+                    <label for="name">Name</label>
+                    <div *ngIf="formErrors.name" class="input-error"><small>{{ formErrors.name }}</small></div>
+                </div>  
+                
+                <div class="md-form animated fadeIn" id="email-input">
+                    <input id="email" formControlName="email" type="text" class="form-control" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()">
+                    <label for="email">Email</label>
+                    <div *ngIf="formErrors.email" class="input-error"><small>{{ formErrors.email }}</small></div>
+                </div>
+            
+                <div class="md-form animated fadeIn" id="subject-input"> 
+                    <input id="subject"  type="text" class="form-control" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()">
+                    <label for="subject">Subject</label>
+                </div>
+            
+                <div class="md-form animated fadeIn" id="message-input">
+                    <textarea id="message" formControlName="message" type="text" class="form-control md-textarea" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()"></textarea>
+                    <label for="message">Message</label>
+                    <div *ngIf="formErrors.message" class="input-error"><small>{{ formErrors.message }}</small></div>
+                </div>
+            </form>
+            <button [class.disabledBtn]="contactUsForm.invalid" class="btn-lights" type="submit" (click)="submitMessage()">Send Message</button>
+            <div id="reCaptchaElem"></div>  
+        </div>
+        <div class="cards-footer"> </div>
+    </div>
+</div> 
+
+
+
+<!--<form role="form" [formGroup]="contactUsForm" novalidate>
+        <div class="form-content text-center">
+            <input id="email" formControlName="email" type="text" placeholder="Enter Email" class="subscribe-email form-control" required>
+            <div *ngIf="formErrors.email" class="error"><small>{{ formErrors.email }}</small></div>
+            <input id="name" formControlName="name" type="text" placeholder="Your name..." class="form-control">
+            <div *ngIf="formErrors.name" class="error"><small>{{ formErrors.name }}</small></div>
+            <input id="message" formControlName="message" type="text" placeholder="..." class="form-control">
+            <div *ngIf="displayUserNameErrors() && formErrors.message" class="error"><small>{{ formErrors.message }}</small></div>
+            <input id="subscribe" formControlName="subscribe" type="checkbox" class="form-control">
+            <label for="subsribe">Subscribe to Updates and News!</label>
+            
+        </div>
+    </form>-->

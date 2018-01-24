@@ -1,0 +1,51 @@
+<nav *ngIf="visible" id="navMenu"> 
+    <button id="panel" (click)="toggleActive()" [class.isActive]="isActive" class="hamburger hamburger--3dx animated fadeInLeft" type="button">
+            <span class="hamburger-box" >
+                <span class="hamburger-inner"></span>
+            </span>
+    </button>
+
+    <div id="menu">
+        <div id="mySidenav" class="sidenav" [class.isActive]="isActive">
+            <div id="close-box"></div>
+
+            <div id="nav-content">
+                <a routerLink="/contact" (click)="toggleActive()"><h1>Contact Us</h1></a>
+
+                <div id="nav-links">
+                    <div class="slant" id="facebook">
+                            <a class="waves-effect" id="social-btn" href="https://www.facebook.com/BottleMakers/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    </div>
+
+                    <div class="slant" id="twitter">
+                            <a class="waves-effect" id="social-btn" href="https://twitter.com/bottlemakers"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                    </div>
+
+                    <div class="slant" id="instagram">
+                            <a class="waves-effect" id="social-btn" href="https://www.instagram.com/username/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+
+                    <div class="slant" id="contactus">
+                            <a class="waves-effect" id="social-btn" routerLink="/contact" (click)="toggleActive()"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <!--<div class="btn-group">
+            <a class="btn socialBtn waves-effect" id="fb-btn" href="https://www.facebook.com/BottleMakers/"><i class="fa fa-facebook-square" aria-hidden="true"></i> Like us on Facebook</a>
+            <a class="btn socialBtn waves-effect" id="twitter-btn" href="https://www.instagram.com/username/"><i class="fa fa-twitter-square" aria-hidden="true"></i> Follow us on Twitter</a>
+            <a class="btn socialBtn waves-effect" id="ig-btn" href="https://twitter.com/bottlemakers"><i class="fa fa-instagram" aria-hidden="true"></i> Follow us on Instagram</a>
+            </div>
+            <div id="sidenav-links"> -->
+                
+                <!--<ul>
+                    <li><a href="https://www.facebook.com/BottleMakers/"><img id="sidenav-badge" src="http://www.toddbuilders.build/wp-content/uploads/find-us-onfacebook.png"></a></li>
+                    <li><a href="https://www.instagram.com/username/"><img id="sidenav-badge" src="http://www.cityofelgin.org/images/pages/N80/twitter_logo.png"></a></li>
+                    <li><a href="https://twitter.com/bottlemakers"><img id="sidenav-badge" src="https://thecosmicgrape.files.wordpress.com/2014/01/instagram-badge.png"></a></li>
+                </ul>-->
+        </div>
+    </div>
+        
+    <div id="overlay" (click)="toggleActive()" [class.isActive]="isActive"></div>
+</nav> 

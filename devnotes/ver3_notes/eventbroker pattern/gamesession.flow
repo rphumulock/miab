@@ -1,0 +1,48 @@
+Original: 2017Dec05
+
+Flows:
+
+    
+    -> go to play now...
+        -> user session guard -> approve route
+        -> game session guard -> not initialized
+            -> broadcast new gamession redirect
+            -> broadcast init session { showmodal: true; }
+            -> reject route
+            -> async session factory
+                -> show modal
+                -> request new session
+                -> close modal
+                -> broadcast streamuser
+            -> async game session service
+                -> receive streamuser object
+                -> process streamuser
+                -> process streamuser.game
+                -> broadcast usersession refresh
+                -> broadcast start redirect
+                
+
+
+    -> go to play now...
+        -> user session guard -> approve route
+        -> game session guard -> not initialized
+            -> broadcast new gamession redirect
+            -> broadcast init session { showmodal: true; }
+            -> reject route
+            -> async session factory
+                -> show modal
+                -> request new session
+                -> close modal
+                -> broadcast error { reset: false; redirect: landing }
+            -> async error service 
+                -> receive error
+                -> show modal
+                -> redirect landing
+
+        
+    -> receive reset gamesession event...
+        -> reset all game session values
+
+                
+
+

@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="cards-light" id="completed-card">
+        <div class="cards-header-light">
+            <div id="game-code">Game Code: {{ gameCode() }}</div>
+        </div>
+
+        <div class="cards-body-light">
+            <div class="acc-bar" [class.openordaccordian]="activeAccordian.first">
+              
+                <div *ngIf="first" class="temp">
+                    <h2 (click)="toggleAccordian(1)">Games</h2>
+                        
+                            <div class="scroll" drag-scroll drag-scroll-y-disabled="true" scrollbar-hidden="true">
+                              <img id="game-scroll" *ngFor="let scroll of scrolls" (click)="clickGame($event)" src="/img/miab-cg.png">
+
+                              <!--<div *ngFor="let scroll of scrolls" (click)="clickGame($event)" id="game-scroll">
+                                 
+                                </div>-->
+                            </div>
+                        </div>
+                </div>
+              
+        
+            <div class="acc-bar" [class.openordaccordian]="activeAccordian.second">
+                <h2 (click)="toggleAccordian(2)">Scrolls</h2>
+                <div *ngIf="second">
+
+                            <div class="scroll" drag-scroll drag-scroll-y-disabled="true" scrollbar-hidden="true">
+                                <img id="game-scroll" *ngFor="let scroll of scrolls" (click)="clickScroll($event)" src="/img/miab-cg.png">
+                               
+                                <!-- <div *ngFor="let scroll of scrolls">
+                                    <img (click)="clickScroll($event)" src="/img/starwars.jpg">                             
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+             
+           
+            <div class="acc-bar" [class.openordaccordian]="activeAccordian.third">
+                <h2 (click)="toggleAccordian(3)">Frames</h2>
+                <div *ngIf="third">
+                  
+                     
+                            <div class="scroll" drag-scroll scrollbar-hidden="true">
+                                <div *ngFor="let frame of frames" [class.is-odd]="(frame.type % 2) !== 0" >
+                                    <img class="img-frame" id="game-scroll" *ngIf="frame.type == 1" (click)="clickFrame($event)" src="/img/miab-cg.png">
+                                    <div class="text-frame" id="game-scroll" *ngIf="frame.type == 0" (click)="clickFrame($event)"><p>{{ frame.val }} Four score and seven years ago some great shit happened and we just need to test this shit to make sure it wraps right</p></div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+           
+        </div>
+    </div>
+  

@@ -1,0 +1,83 @@
+.footer {
+    background: -webkit-linear-gradient(bottom, rgba(11, 25, 52, .9) 0%, rgba(34, 74, 157, .9) 100%);
+    background: linear-gradient(to top, rgba(11, 25, 52, .9) 0%, rgba(34, 74, 157, .9) 100%);
+    /*-webkit-transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25), -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    -webkit-transform: scale(1);
+    transform: scale(1);*/
+    color: white; 
+    bottom: 0;
+    width: 100%;
+    box-shadow: -1px -1px 2px grey;
+    z-index: 1000;
+    font-family: Kalam;
+    height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    position: fixed;
+}
+
+.footer a i {
+    margin: 0 5px;
+    color: white;
+    font-size: 1em;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.footer a {
+    color: rgba(77, 154, 219, 1);
+    font-family: Lobster, cursive;
+    text-align: center;
+}
+
+#footer-tag {
+    
+    margin-left: 5px;
+    font-size: .9em;
+    text-align: center;
+
+    
+}
+
+@media screen and (max-width: 960px) {
+    .footer {
+        background: -webkit-linear-gradient(bottom, rgba(11, 25, 52, 1) 0%, rgba(34, 74, 157, 1) 100%);
+        background: linear-gradient(to top, rgba(11, 25, 52, 1) 0%, rgba(34, 74, 157, 1) 100%);
+        color: white; 
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding-top: 5px;
+        box-shadow: -1px -1px 2px grey;
+        z-index: 1000;
+        font-family: Kalam;
+        height: 35px;
+        vertical-align: middle;
+        
+    }
+    .footer a i {
+        margin: 0 5px;
+        color: white;
+        font-size: 1em;
+        float: right;
+        padding-top: 2px;
+        padding-right: 10px;
+    }
+    
+    .footer a {
+        color: rgba(77, 154, 219, 1);
+        font-family: Lobster, cursive;
+    }
+    
+    #footer-tag {
+        float: left;
+        margin-left: 5px;
+        font-size: 3.5vw;
+        vertical-align: middle;
+    }
+   
+}
+

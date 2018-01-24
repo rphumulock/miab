@@ -1,0 +1,165 @@
+core.es5.js:3033 Template parse warnings:
+The <template> element is deprecated. Use <ng-template> instead ("
+    <router-outlet><router-outlet>
+    [WARNING ->]<template ngbModalContainer></template>
+    "): ng:///PlayGameFeatureModule/RootGameComponent.html@2:4
+Console.warn @ core.es5.js:3033
+TemplateParser.parse @ VM23911:12211
+JitCompiler._compileTemplate @ VM23911:25966
+(anonymous) @ VM23911:25890
+JitCompiler._compileComponents @ VM23911:25890
+createResult @ VM23911:25775
+ZoneDelegate.invoke @ zone.js:381
+Zone.run @ zone.js:141
+(anonymous) @ zone.js:805
+ZoneDelegate.invokeTask @ zone.js:414
+Zone.runTask @ zone.js:181
+drainMicroTaskQueue @ zone.js:574
+core.es5.js:3025 Angular is running in the development mode. Call enableProdMode() to enable the production mode.
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:39 GMT millisecs: 738|#| route session guard checking session state: userSession isInitialized: undefined | gameSession is Initialized: undefined
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:39 GMT millisecs: 775|#| checking currently logged in user...
+index.js?http:/localhost:3000:38 [WDS] Warnings while compiling. Reload prevented.
+index.js?http:/localhost:3000:90 ./~/@angular/core/@angular/core.es5.js
+5874:15-36 Critical dependency: the request of a dependency is an expression
+warnings @ index.js?http:/localhost:3000:90
+sock.onmessage @ socket.js:37
+EventTarget.dispatchEvent @ eventtarget.js:51
+(anonymous) @ main.js:274
+SockJS._transportMessage @ main.js:272
+EventEmitter.emit @ emitter.js:50
+WebSocketTransport.ws.onmessage @ websocket.js:35
+wrapFn @ zone.js:1032
+ZoneDelegate.invokeTask @ zone.js:414
+Zone.runTask @ zone.js:181
+ZoneTask.invoke @ zone.js:476
+index.js?http:/localhost:3000:90 ./~/@angular/core/@angular/core.es5.js
+5890:15-102 Critical dependency: the request of a dependency is an expression
+warnings @ index.js?http:/localhost:3000:90
+sock.onmessage @ socket.js:37
+EventTarget.dispatchEvent @ eventtarget.js:51
+(anonymous) @ main.js:274
+SockJS._transportMessage @ main.js:272
+EventEmitter.emit @ emitter.js:50
+WebSocketTransport.ws.onmessage @ websocket.js:35
+wrapFn @ zone.js:1032
+ZoneDelegate.invokeTask @ zone.js:414
+Zone.runTask @ zone.js:181
+ZoneTask.invoke @ zone.js:476
+index.js?http:/localhost:3000:90 asset size limit: The following asset(s) exceed the recommended size limit (250 kB).
+This can impact web performance.
+Assets: 
+  vendor.bundle.js (9.7 MB)
+  main.bundle.js (1.44 MB)
+  polyfills.bundle.js (2.28 MB)
+warnings @ index.js?http:/localhost:3000:90
+sock.onmessage @ socket.js:37
+EventTarget.dispatchEvent @ eventtarget.js:51
+(anonymous) @ main.js:274
+SockJS._transportMessage @ main.js:272
+EventEmitter.emit @ emitter.js:50
+WebSocketTransport.ws.onmessage @ websocket.js:35
+wrapFn @ zone.js:1032
+ZoneDelegate.invokeTask @ zone.js:414
+Zone.runTask @ zone.js:181
+ZoneTask.invoke @ zone.js:476
+index.js?http:/localhost:3000:90 entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (250 kB). This can impact web performance.
+Entrypoints:
+  main (13.4 MB)
+      polyfills.bundle.js
+      vendor.bundle.js
+      main.bundle.js
+  polyfills (2.28 MB)
+      polyfills.bundle.js
+  vendor (12 MB)
+      polyfills.bundle.js
+      vendor.bundle.js
+
+warnings @ index.js?http:/localhost:3000:90
+sock.onmessage @ socket.js:37
+EventTarget.dispatchEvent @ eventtarget.js:51
+(anonymous) @ main.js:274
+SockJS._transportMessage @ main.js:272
+EventEmitter.emit @ emitter.js:50
+WebSocketTransport.ws.onmessage @ websocket.js:35
+wrapFn @ zone.js:1032
+ZoneDelegate.invokeTask @ zone.js:414
+Zone.runTask @ zone.js:181
+ZoneTask.invoke @ zone.js:476
+index.js?http:/localhost:3000:90 webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+warnings @ index.js?http:/localhost:3000:90
+sock.onmessage @ socket.js:37
+EventTarget.dispatchEvent @ eventtarget.js:51
+(anonymous) @ main.js:274
+SockJS._transportMessage @ main.js:272
+EventEmitter.emit @ emitter.js:50
+WebSocketTransport.ws.onmessage @ websocket.js:35
+wrapFn @ zone.js:1032
+ZoneDelegate.invokeTask @ zone.js:414
+Zone.runTask @ zone.js:181
+ZoneTask.invoke @ zone.js:476
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:39 GMT millisecs: 889|#| provider: firebase
+logger.ts:25 |#|Wed, 14 Jun 2017 20:36:39 GMT millisecs: 890|#| 
+logger.ts:26 U {ba: Array(0), j: "AIzaSyBQHZuhCKplCYc_9k0FLT63mmULm5BGvvI", D: "dev", v: "miab-angular-dev.firebaseapp.com", g: S…}
+logger.ts:25 |#|Wed, 14 Jun 2017 20:36:39 GMT millisecs: 893|#| 
+logger.ts:26 UserSessionService {projService: FirebaseProjectService, acctUpgrader: AccountUpgradeService, logger: LoggingService, redirect: IndicatorOfRedirect, _authId: "XEZ9yy3UYSOQO22snLsrzRgyxfC3"…}
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:39 GMT millisecs: 894|#| reading redirect anonymous: true , reset requested: true
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:39 GMT millisecs: 895|#| initializing gamesession service
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:40 GMT millisecs: 802|#| using previous streamuser
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:40 GMT millisecs: 803|#| setting up user persistence subscription
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:40 GMT millisecs: 813|#| returned game status:none
+logger.ts:25 |#|Wed, 14 Jun 2017 20:36:40 GMT millisecs: 814|#| 
+logger.ts:26 GameSessionService {userSession: UserSessionService, firebaseProjs: FirebaseProjectService, subscriptionService: SubscriptionsService, logger: LoggingService, refreshStreamUserValues: function…}
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:40 GMT millisecs: 816|#| reading redirect url: /game , reset requested: true
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:40 GMT millisecs: 823|#| route session guard checking session state: userSession isInitialized: true | gameSession is Initialized: true
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:40 GMT millisecs: 825|#| route correction guard. snapshot state url: /game
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:40 GMT millisecs: 828|#| checking game session status...
+logger.ts:19 |#|Wed, 14 Jun 2017 20:36:40 GMT millisecs: 830|#| game session status value: none
+logger.ts:19 |#|Wed, 14 Jun 2017 20:37:42 GMT millisecs: 809|#| join game modal result received
+logger.ts:19 |#|Wed, 14 Jun 2017 20:37:42 GMT millisecs: 812|#| submitting join game request: {"gamecode":"9RQ6T","playerName":"okresetoutside"}
+logger.ts:19 |#|Wed, 14 Jun 2017 20:37:42 GMT millisecs: 817|#| join request monitoring event received: "submitted"
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 274|#| join request monitoring event received: "approved"
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 276|#| join request monitoring event received: "acknowledged"
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 277|#| join game server call back recevied!
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 277|#| status returned: "approved"
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 278|#| approval callback starting...!
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 278|#| refreshing my game session object
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 279|#| refreshing streamuser values
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 309|#| processing returned validated game: {"gameCode":"9RQ6T","gameId":"-Kl-PQ3OPWfDLHmDHTHP","status":"inqueue"}
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 310|#| attempting to build game status subscription
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 311|#| attempting to build user status subscription
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 312|#| user game subscription status received: inqueue
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:01 GMT millisecs: 340|#| game state subscription status received: ready
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:04 GMT millisecs: 897|#| Submitting start game request
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:06 GMT millisecs: 136|#| user game subscription status received: started
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:12 GMT millisecs: 366|#| game state subscription status received: err
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:12 GMT millisecs: 367|#| session error on url: /game/lobby
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:12 GMT millisecs: 368|#| modalCloseTimeout: 3000
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:12 GMT millisecs: 369|#| launching session err dialog
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:12 GMT millisecs: 371|#| session error service. waiting to submit refresh and reset on error request.
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:13 GMT millisecs: 873|#| session error service. refresh and reset on error request received
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:13 GMT millisecs: 873|#| refreshing streamuser values
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 442|#| processing returned validated game: {"gameCode":"9RQ6T","gameId":"-Kl-PQ3OPWfDLHmDHTHP","playerIndex":1,"playerName":"okresetoutside","status":"started"}
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 442|#| attempting to build game status subscription
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 443|#| game state subscription status received: err
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 444|#| still processing error, skipping this game status "err" event response
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 445|#| attempting to build user status subscription
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 446|#| user game subscription status received: started
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 447|#| still processing error, skipping this user status of "started" event response
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 448|#| session error service. game session refresh result: started
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 448|#| session error service. refresh value not reset to game status of none submitting reset requests...
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 449|#| session error service. submitting user game reset request
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:14 GMT millisecs: 451|#| session error service. user reset request status received: submitted
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:15 GMT millisecs: 828|#| user game subscription status received: none
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:15 GMT millisecs: 829|#| still processing error, skipping this user status of "none" event response
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:15 GMT millisecs: 830|#| user game subscription status received: none
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:15 GMT millisecs: 830|#| still processing error, skipping this user status of "none" event response
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:21 GMT millisecs: 102|#| session error service. user reset request status received: completed
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:21 GMT millisecs: 103|#| updating reset status to acknowledged
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:21 GMT millisecs: 105|#| session error service. user reset request status received: acknowledged
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:21 GMT millisecs: 106|#| refreshing streamuser values
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:21 GMT millisecs: 137|#| session error service. game session refresh result: none
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:21 GMT millisecs: 137|#| session error service. enabling modal close button and enable timed autoclose
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:24 GMT millisecs: 141|#| session error service. manually closing thr error modal
+logger.ts:19 |#|Wed, 14 Jun 2017 20:38:24 GMT millisecs: 143|#| err dialog closed, redirecting...

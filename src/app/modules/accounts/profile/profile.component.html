@@ -1,0 +1,43 @@
+
+<div class="card animated fadeIn">
+    <div class="card-header">
+        <div class="avatar">
+            <img src="http://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png" class="rounded-circle" id="profile-avatar">
+        </div>
+    </div>
+
+    <div class="profile-card card-body">
+
+        <div>
+            <div id="profile-user">
+                <p>You're logged in as:</p>
+                <h2>{{ loggedInUser }}</h2>
+                <h5 *ngIf="gameCode">Your permlink code: {{ gameCode }}</h5>
+                <br/>
+            </div>
+            <button class="btn animated bounceIn waves-effect" id="logout-btn" (click)="logOut()">Log Out</button>
+        </div>
+
+        <div *ngIf="!userSession.isAnonymous">
+            <hr>
+            <div id="profile-upgrade">
+                <p>{{ linkAccountMessage }}</p>
+            </div>
+
+            <form role="form" [formGroup]="guestAccountForm" novalidate>
+                <div class="form-content text-center animated zoomIn">
+                    <input id="permlink" formControlName="permlink" type="text" 
+                    (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()" placeholder="Enter Permlink Code..." class="form-control" required>
+                    <div *ngIf="formErrors.permlink" class="error">
+                        <small>{{ formErrors.permlink }}</small>
+                    </div>
+                </div>
+            </form>
+
+            <button class="btn animated bounceIn waves-effect" id="link-btn" (click)="linkGuestAccountGames()">Link Games to Account</button>
+        </div>
+        
+    </div>
+
+    <div class="card-footer"> </div>
+</div>

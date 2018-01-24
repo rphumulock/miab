@@ -1,0 +1,27 @@
+
+Event Broker 
+    -> Facilitates the exchange of events between multiple different instances
+
+
+Events:
+    - Current Game Turn Details 
+
+
+Players:
+
+GameLoopManager -> eventbroker
+Router -> eventbroker
+    - making sure you are going to the right game page
+    - making sure the the details are available for that page before allowing you there
+Current Game Page -> eventbroker
+Current Turn Subscriber -> eventbroker
+Start Round Subscriber -> eventbroker
+Redirect Manager -> eventbroker
+GameDetailsRequest Service -> eventbroker
+
+
+
+Sequence:
+
+
+

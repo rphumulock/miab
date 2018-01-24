@@ -1,0 +1,135 @@
+
+    /**
+     * Tasks:
+   
+     - access to anonymous/email/facebook etc... auth providers
+     - return an observable of firebase.auth.User values
+
+     Provides:
+
+     - a function(s) to use this service with   
+        -> options include:
+            - ability to specifiy firebase project
+            - choice of provider
+            - a command (login, logout)
+
+     Depends on:
+     - a FirebaseProjectManager service
+   
+     Concerns:
+     - Managing unique usernames
+        - Letting users find friends...
+        - solution: /usernames/<username>/{ active: boolean, userId: string }
+    - Managing verifying user emails + welcome messages
+
+    - Managing user password resets... (not necessary but might be a good idea to keep similar theme)
+        - Captcha?
+        - Solution:
+            - https://firebase.google.com/docs/auth/custom-email-handler
+            - admin actions ( email verification, password resetting, changing emails addresses use email handlers)
+            - https://firebase.google.com/docs/auth/web/manage-users#send_a_user_a_verification_email
+            - admin actions also require re-authentication, which may trigger any authentication handlers you have set up.
+            - 
+    - 
+   
+   
+   
+     */
+
+    /**
+     * Anonymous Auth:
+  
+     firebase.auth().signInAnonymously();
+
+     */
+
+
+    /**
+     * Email Auth:
+     
+     https://firebase.google.com/docs/reference/js/firebase.auth.Auth#signInWithEmailAndPassword
+     
+     returns firebase.Promise containing non-null firebase.User
+
+     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+  --------
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+  
+  --------
+
+
+  
+  Error Codes
+  
+  auth/email-already-in-use
+  
+  Thrown if there already exists an account with the given email address.
+  
+  auth/invalid-email
+  
+  Thrown if the email address is not valid.
+  auth/operation-not-allowed
+  
+  Thrown if email/password accounts are not enabled. Enable email/password accounts in the Firebase Console, under the Auth tab.
+  auth/weak-password
+  
+  Thrown if the password is not strong enough.
+  
+  --------
+  
+  firebase.auth().fetchProvidersForEmail(email) returns firebase.Promise containing non-null Array of string
+  
+  Gets the list of provider IDs that can be used to sign in for the given email address. Useful for an "identifier-first" sign-in flow.
+  
+  Error Codes
+  auth/invalid-email
+  Thrown if the email address is not valid.
+  
+  
+     */
+gamecode
+    -> if anonymous 
+        input: supply perm link || give them
+
+streamusers/
+    -> uid: data{} (per game)
+
+
+requestmygames/
+    - lasjhdlksajdl -> uid 
+
+permlinks/
+    - generatedpermlink: {uid}
+
+users/
+    uid : permanent data
+        gamelistID
+        username
+        permanen url -> only generate for anonymous users
+
+usernames/
+    username: {active, uid}
+
+
+gamesLists/
+    djaskdj;kjsad;  
+        - lasdjksajdlksajdlksajdlasjd
+        lasdjlaskdjlsakdjlas
+
+games/
+    ksjdflasj
+    sadkllaskjd
+    lkjfldskj
+    kjhfldskjflsjdf
+    lkasdhlkajsd
+    lskadlkasjd

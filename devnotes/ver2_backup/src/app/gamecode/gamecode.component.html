@@ -1,0 +1,23 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="panel panel-default">
+      <form [formGroup]="userInfo" (ngSubmit)="submitForm()">
+        <div class="form-group">
+          <label for="gamecode">Game Code:</label>
+          <input type="text" class="form-control" id="gamecode" required name="gameCode">
+          <label for="playername">Player Name: {{ playerName }}</label>
+          <input type="text" class="form-control" id="playername" required name="playerName" placeholder="Username...">
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+</div>
+<footer class="footer navbar-fixed-bottom">
+  <div class="col-xs-6">
+    <a href="https://www.facebook.com/BottleMakers/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://twitter.com/bottlemakers"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+  </div>
+  <div class="col-xs-6">&copy; Message in a Bottle by<a href="http://miabgame.com">Zumbiil, Inc</a></div>
+</footer>
+</div>

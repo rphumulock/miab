@@ -1,0 +1,69 @@
+Issues:
+    - persistence offline game resets are a bit off, should be more thoroughly checked and use updatestatustoerror whnen appropriate
+    - updatestatustoerror should require text about the source
+
+Notes:
+    - on initial connect
+        - read stream user 
+        - if Game && GameStatus.none -> user status subscription not made yet, so no errors
+
+    - on inital connect 
+        - persistence functions accept GameStatus.none as ok 
+
+GameState.err
+    -> game status -> notify
+    -> user status -> expect reset
+    -> error service
+        -> modal
+        -> wait 
+        -> refresh
+        -> if not none
+            -> user status -> expect reset 
+            -> request reset
+    -> user status  
+        -> GameStatus.none
+            -> is expected -> expected = false;
+
+
+
+(user) GameStatus.err (server wait -> resetPlayer)
+    -> user status -> notify
+    -> user status -> expect reset
+    -> error service 
+        -> modal
+        -> wait
+        -> refresh 
+        -> if not none
+            -> user status -> expect reset
+            -> request reset
+        -> user status 
+            -> GameStatus.none
+                -> is expected -> expected = false;
+
+(user) GameStatus.none 
+    -> if expected -> return
+    -> notify error 
+    -> error service 
+        -> modal
+        -> refresh
+        
+new function
+    /stream user/status/err
+        -> wait 200ms, reset resetPlayer
+
+new subscription
+    -> error status manager
+        -> expectreset (user status subscribe)
+
+notify error options
+    -> expect reset
+    -> msg - optional - default: oh no
+    -> immediate reset - default: false
+    -> refresh timeout - default: true | default: 3000 (wait)
+    -> 
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<div class="modal-wrapper">
+    <div *ngIf="allowDismissal" class="dismiss-btn">
+        <a (click)="dismiss($event)">
+            <i class="fa fa-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="modal-body">
+        <div>
+            <form role="form" (ngSubmit)="submitRequest()" [formGroup]="gameCodeForm" novalidate>
+                <div class="form-content">
+                    <label (click)="select('gamecode')" for="gamecode">Game Code:</label>
+                    <input required id="gamecode" formControlName="gamecode" type="text" placeholder="Enter game code..." 
+                    class="form-control" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()">
+                    <label (click)="select('playerName')" for="playerName">Player Name:</label>
+                    <input required id="playerName" formControlName="playerName" type="text" placeholder="Enter player name..." 
+                    class="form-control" (focusin)="viewportManager.onfocus()" (blur)="viewportManager.onblur()">
+                    <button class="btn-lights" type="submit">{{ buttonMsg() }}</button>
+                </div>
+            </form>
+            <!--<div *ngIf="submitFooter">
+                <button type="button" class="btn-lights" (click)="activeModal.close(true)">{{ buttonMsg() }}</button>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="modal-header">
+    <h4 class="modal-title"> {{ modalTitle }}</h4>
+    <div *ngIf="allowDismissal">
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+    </div>
+</div>-->

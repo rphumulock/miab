@@ -1,0 +1,145 @@
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+    body {
+        background: url(/img/bg-mobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    } 
+}
+/* #### Mobile Phones Landscape #### */
+@media screen and (max-device-width: 640px) and (orientation: landscape){
+    body {
+        background: url(/img/bg-mobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    } 
+}
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-device-width: 640px){
+    body {
+        background: url(/img/bg-mobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    } 
+}
+/* #### iPhone 4+ Portrait or Landscape #### */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){
+      body {
+        background: url(/img/bg-mobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+/* #### iPhone 5 Portrait or Landscape #### */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){
+      body {
+        background: url(/img/bg-mobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    } 
+}
+/* #### iPhone 6 and 6 plus Portrait or Landscape #### */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
+      body {
+        background: url(/img/bg-mobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    } 
+}
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+  /* some CSS here */
+      body {
+        background: url(/img/bg-mobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    } 
+}
+
+@media screen and (max-width: 576px){
+      body {
+        background: url(/img/bg-mobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        font-size: 1.5rem;
+    }
+    .title-text {
+        font-size: 3rem;
+    }
+    a {
+        font-size: 2.5rem;
+    } 
+}
+@media screen and (min-width: 577px) {
+     body {
+        background: url(/img/bg-desktop.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        font-size: 2rem;
+    }
+    .title-text {
+        font-size: 4rem;
+    }
+    a {
+        font-size: 3rem;
+    }
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: gold;
+    text-decoration: none;
+    font-weight: normal;
+    margin: 4rem 1rem;
+}
+body, label, p {
+    font-family: 'Macondo Swash Caps';
+	text-shadow: -1px -1px 1px #aaa,
+             0px 4px 1px rgba(0,0,0,0.5),
+             4px 4px 5px rgba(0,0,0,0.7),
+             0px 0px 7px rgba(0,0,0,0.4);
+    color: gold;
+}
+.title-text {
+    color: #e9e6be;
+	margin: 3.5rem 0;
+}
+.margin {
+    margin: 2rem;
+}
+.footer,
+.footer a {
+    font-size: 1.8rem;
+}
+.waiting {
+    margin-top: 20rem;
+}

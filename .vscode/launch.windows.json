@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // https://code.visualstudio.com/docs/nodejs/nodejs-debugging
+    // also make sure you setup tsconfig (if typescript) properly
+    // If using webpack:
+    // http://stackoverflow.com/questions/36470946/debug-webpack-bundled-node-ts-with-visual-studio-code
+    // https://github.com/AngularClass/angular2-webpack-starter/issues/144
+    // 
+    // **** This is the windows version of this configuration file ****
+    // 
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Build and Debug",
+            "preLaunchTask": "build",
+            "sourceMaps": true,
+            "smartStep": true,
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "program": "${workspaceRoot}\\dist\\main.bundle.js",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "address": "localhost",
+            "port": 5858,
+            "sourceMaps": true,
+            "smartStep": true,
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ]
+        },
+        {
+            // https://github.com/angular/angular-cli/issues/2453
+            // Debugging with chrome
+            // https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome
+            "name": "Chrome w/ Sourcemaps",
+            "preLaunchTask": "warnDeveloper",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000/",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}/src",
+            "sourceMapPathOverrides": {
+                "webpack:///*": "/*"
+            },
+            "trace": true
+        }
+    ]
+}

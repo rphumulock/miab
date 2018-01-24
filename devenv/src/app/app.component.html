@@ -1,0 +1,8 @@
+<div id="root-element" class="container-fluid">
+<div *ngIf="isMobileDevice && isLandscape" id="landscape-overlay"></div>
+<navigation-component></navigation-component>
+<header-component></header-component>
+<settings-component></settings-component>
+<router-outlet></router-outlet>
+<footer-component></footer-component>
+</div>

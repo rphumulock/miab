@@ -1,0 +1,35 @@
+<div class="container text-center">
+    <div class="row">
+        <a href="#/landing">Home</a>
+        <a href="#/contact">Contact</a>
+    </div>
+    <div class="row">
+        <div class="title-text">Message in a Bottle</div>
+        <p>
+            is a multiplayer co-op game with a simple goal:<br/>relay the secret message to the next player!<br/><br/> The
+            caveat? Players turns alternate between<br/>sketching illustrations and writing notes<br/> while the timer provides
+            an exiciting rush.<br/><br/>Preserve the secret message to win<br/>laughs ensue when you don't!
+        </p>
+    </div>
+    <div class="row margin">
+        <div class="col-xs-12 text-center subscribe">
+            <p>Sign up to receive updates!<br/></p>
+            <form class="form-inline" role="form" (ngSubmit)="submitForm()" [formGroup]="subscriptionForm" novalidate>
+                <div class="form-content">
+                    <input required id="email" formControlName="email" type="text" placeholder="Enter your email..." class="subscribe-email form-control">
+                    <button class="btn btn-primary-outline" type="submit">Submit</button>
+                </div>
+            </form>
+            <div class="success-message"></div>
+            <div class="error-message"></div>
+        </div>
+    </div>
+    <footer class="col-xs-6" class="footer">
+        <div class="fa">
+            <a href="https://www.facebook.com/BottleMakers/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/bottlemakers"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://instagram.com/u/bottlemakers"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <div class="copyright">&copy; Message in a Bottle by<a href="http://miabgame.com">Zumbiil, Inc</a></div>
+    </footer>
+</div>

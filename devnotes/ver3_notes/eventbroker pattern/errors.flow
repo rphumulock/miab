@@ -1,0 +1,21 @@
+Original: 2017Dec06
+
+Flows:
+
+ -> receive error broadcast event
+    -> log message
+    -> log error
+    -> show modal
+    -> wait 2000ms
+    -> broadcast redirect request
+        -> options.redirect or landing...
+    -> if reset requested
+        -> broadcast rebuild session
+    -> else 
+        -> broadcast session refresh (true)
+
+            
+options;
+    - requestReset
+    - message
+    - redirect

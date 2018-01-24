@@ -1,0 +1,25 @@
+/** 
+* https://code.visualstudio.com/docs/getstarted/keybindings
+* To use the below key bindings you have to use the keyboard shortcusts editor
+* File > Preferences > Keyboard Shortcuts. 
+* (Code > Preferences > Keyboard Shortcuts on Mac)
+* Then search for the beautify and expand selection to scope commands
+* (must have extentions installed)
+* Set the keybindings then use advanced customizations to add the 
+* "when" statements 
+* 
+* Author: Edwin Gathura
+*/
+[
+  
+  {
+    "key": "shift+ctrl+b",
+    "command": "HookyQR.beautify",
+    "when": "editorFocus"
+  },
+     {
+    "key": "shift+ctrl+right",
+    "command": "expand-selection-to-scope.expand",
+    "when": "editorFocus"
+  }
+]

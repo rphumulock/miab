@@ -1,0 +1,46 @@
+<div class="container-fluid animated pulse infinite">
+    <div class="logo">
+        <img class="miab-logo animated pulse infinite" src="/img/MIAB-Logo-Landing.png">
+    </div>
+
+    <div class="game-menu animated slideInRight">
+        
+        <div class="slant" (click)="startGame()" id="start-game">
+            <h1> Start Game</h1>
+        </div>
+
+        <div class="slant" (click)="joinGame()" id="join-game">
+            <h1> Join Game</h1>
+        </div>
+
+        <div class="slant" routerLink="/testcompleted" id="completed-games">
+            <h1>My Games</h1>
+        </div>
+
+    </div>
+
+    </div>  
+
+
+
+
+
+
+   <!-- <div class="menu-buttons">
+        <a href="" (click)="startGame()" id="start-button">
+            <div class="menulink animated fadeInDown">
+                Start Game
+        </div></a> -->
+        <!--
+        <a href="" (click)="startGame()">
+            <img class="animated fadeInDown" id="start-button" src="/img/miab-wood-button-start.png" /></a> 
+
+        <a href="" (click)="joinGame()">
+            <img class="animated fadeInDown" id="join-button" src="/img/miab-wood-button-join.png" /></a>
+
+        <a routerLink="/accounts/completedgames" href="">
+            <img class="animated fadeInDown" id="chest-button" src="/img/miab-wood-button-chest.png" /></a> -->
+  
+    
+                           
+            

@@ -1,0 +1,31 @@
+
+
+users - permanent
+    -> we are going to only
+
+
+streamusers - per game object - deleted after a game
+
+
+
+
+gamesession flow - current
+    -> wil authenticate you when u land on the page
+    -> game listen for new user 
+    -> setup the game session
+    -> attach an online/offline listener
+    -> waits for 2 seconds 
+        -> make new stream user request 
+
+
+-- 
+
+onNewAccountCreated
+    -> automaically creates a new streamusers
+
+
+onStreamUserRequest   
+    -> creates a new stream user
+
+
+GSFC is currently migrating to the agency Nessus CDM deployment and is ceasing the addition of any new accounts and asking current users to suspend scanning until further guidance is provided

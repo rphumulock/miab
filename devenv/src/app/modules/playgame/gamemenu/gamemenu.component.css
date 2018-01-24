@@ -1,0 +1,147 @@
+/*.menu-buttons {
+    position: absolute;
+    width: 30%;
+    text-align: center;
+    vertical-align: center;
+    left: 35%;
+    z-index: 100;
+    padding: 0;
+    top: 0;
+}
+
+#start-button, #join-button, #chest-button {
+    width: 100%;
+    height: auto;
+}
+
+#start-button {
+    animation-delay: 0.8s;
+    z-index: 1;
+}
+
+#join-button  {
+    animation-delay: 1.2s;
+    margin-top: -12px;
+    margin-left: 3px;
+    z-index: 2;
+    animation-timing-function: ease;
+    width: 95%;
+}
+
+#chest-button {
+    animation-delay: 1.6s;
+    margin-top: -24px;
+    margin-left: 5px;
+    z-index: 3;
+    animation-timing-function: ease;
+    width: 95%;
+}
+
+#landing-accent {
+    position: absolute;
+    width: 100%;
+    height: 831px;
+    background: url(/img/MIAB-background-new-accents.png) no-repeat;
+    left: 0;
+    bottom: -60px;
+    animation-delay: .5s;
+}
+
+#landing-bottom {
+    position: absolute;
+    width: 100%;
+    height: 370px;
+    background: url(/img/miab-background-new-bottom.png);
+    bottom: 0;
+    margin-top: -40px;
+    z-index: 100;
+}
+
+.menulink {
+    width: 300px;
+    height: 150px;
+    background: grey;
+    font-color: white;
+}
+
+
+*/
+@media screen and (max-width: 960px) {
+    .container-fluid {
+        background: url(/img/MIAB-BG-white-sm.png) no-repeat  fixed;
+        background-size: auto 100%;
+        animation-duration: 30s;
+        animation-timing-function: ease;
+        animation-delay: 5s;
+    }
+
+    .logo {
+        width: 90%;
+        height: 25%;
+        position: absolute;
+        bottom: 25%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .miab-logo {
+        height: auto;
+        width: 100%;
+        animation-duration: 25s;
+        animation-timing-function: ease;
+    }
+    
+    /*.game-menu {
+        width: 95%;
+        height: 50%;
+        background: white;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }*/
+
+    .slant {
+          width: 125%;
+          height: 30%;
+          -webkit-transform: skew(20deg); 
+             -moz-transform: skew(20deg);
+               -o-transform: skew(20deg);
+        background: rgba(34, 74, 157, .9);
+        
+        text-align: left;
+        padding: 4%;
+        box-sizing: border-box;
+        
+       margin: 4%;
+       box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+       transition: 2s;
+        
+      }
+
+      h1 {
+        font-family: Kalam;
+        color: white;
+        font-size: 8vw;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0;
+        margin-top: 1.5%;
+
+      }
+
+      #start-game {
+          margin-left: 7%;
+      }
+
+      #join-game {
+          margin-left: 22%;
+      }
+
+      #completed-games {
+          margin-left: 37%;
+      }
+
+    
+}

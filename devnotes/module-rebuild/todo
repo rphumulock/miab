@@ -1,0 +1,80 @@
+
+1. Move away from hash location strategy in routing
+2. Need a page not found, wildcard route and component
+3. 
+
+
+What is a "feature" or can be understood to be a feature?
+- Features are resources that are defined and managed within their own NgModule export. 
+
+- For us characteristcs of things that might be features include:
+    - Lazy Loaded/Preloaded Content
+    - Content that might store/manage internal routing
+
+
+What are our main features?
+- Main Page
+    - Navigation Bar
+    - RouterOulet for content
+    - General Components
+        - Contact/Subscribe Form
+
+- Introductory Feature
+    - Animations/Video
+
+- About Us Feature
+    - Company Profile
+    - Members List Component w/ Outlet
+        - Members Detail Component
+
+- Demo Landing Page w/ Outlet
+    - Start/Join 
+    - GameCode Component
+
+- Lobby Feature (lazy Loading)
+    - Game Code Display
+    - Lobby Users (list of users)
+
+- In Game Flow Feature
+    - Text/Image Displays
+
+- Completed Games Feature 
+    - three named outlets
+
+
+What makes sense to preload vs lazy load
+- Pre-loaded resources:
+    - Contact Page
+    - Game Code/ Player Name
+
+- Lazy-loaded resources:
+    - User Chest
+    - Lobby
+    - Game Turn
+        - Text Frame
+        - Drawing Frame
+
+
+
+How are we separating routing vs components vs services
+-> Routing should handle routing 
+    -> Pre-fetching data for a component
+    -> Ensuring parameters required for components exist
+    -> Ensuring access is appropriate (authorization)
+
+-> Components should only be responsible for the view
+    -> Specifically rendering content
+    -> Also specifically handling user events
+
+-> Services are injectable
+    -> Should be broadly re-usuable
+    -> Should provide a specific service to components/routes/directives/other services
+
+Main
+    -> Contact - secondary route (named outlet)
+    -> Crisis Center - feature (ngmodule)
+        -> Crisis List (route + component)
+        -> Crisis Detail/Edit (route + component)
+    -> Heroes - feature
+        -> 
+    -> Admin - feature

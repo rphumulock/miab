@@ -1,0 +1,67 @@
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-img"></div>
+    </div>
+
+    <!-- Top content -->
+    <div class="top-content">
+
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1 class="wow fadeInLeftBig">Message In A Bottle Coming <strong>Soon</strong></h1>
+                        <div class="description wow fadeInLeftBig">
+                            <p>
+                                A multiplayer co-op game where you interpret &#38; relay a secret message to the next player! A new series of mobile party game, coming soon! #indiegame #indiedev. Sign up from the form below
+                                and you'll be one of the first to know when the site is ready.
+                            </p>
+                        </div>
+                        <div class="timer wow fadeInUp">
+                            <div class="days-wrapper">
+                                <span class="days"></span> <br><span class="t-text">days</span>
+                            </div>
+                            <div class="hours-wrapper">
+                                <span class="hours"></span> <br><span class="t-text">hours</span>
+                            </div>
+                            <div class="minutes-wrapper">
+                                <span class="minutes"></span> <br><span class="t-text">minutes</span>
+                            </div>
+                            <div class="seconds-wrapper">
+                                <span class="seconds"></span> <br><span class="t-text">seconds</span>
+                            </div>
+                        </div>
+                        <div class="subscribe wow fadeInUp">
+                            <form class="form-inline" role="form" (ngSubmit)="submitForm()" [formGroup]="subscriptionForm" novalidate>
+                                <div class="form-content">
+                                    <label class="sr-only" for="email">Email address</label>
+                                    <input id="email" [formControl]="subscriptionForm.controls['email']" type="text" placeholder="Enter your email..." class="subscribe-email form-control">
+                                    <button class="btn" type="submit">Submit</button>
+                                </div>
+                            </form>
+                            <div class="success-message"></div>
+                            <div class="error-message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./img/backgrounds.jpeg" style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1401px; height: 1050.75px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -87.375px;">
+    </div>
+    <!-- Footer -->
+        <footer>
+	        <div class="container">
+	        	<div class="row">
+                    <div class="col-sm-12 footer-social">
+                    	<a href="https://www.facebook.com/BottleMakers/"><span class="typcn typcn-social-facebook"></span></a>
+                    	<a href="https://twitter.com/bottlemakers"><span class="typcn typcn-social-twitter"></span></a>
+                    	<a href="#"><span class="typcn typcn-social-instagram"></span></a>
+                    </div>
+	            </div>
+	            <div class="row">
+                    <div class="col-sm-12 footer-copyright">
+                    	&copy; Message in a Bottle by <a href="http://miabgame.com">Zumbiil, Inc</a>.
+                    </div>
+                </div>
+	        </div>
+        </footer>

@@ -1,0 +1,33 @@
+Original: 2017Dec05
+
+Flows:
+
+-> go to play now...
+        -> user session guard -> not initialized
+            -> broadcast new usersession redirect
+            -> reject route 
+            -> async authservice
+                -> login anonymously
+                -> broadcast firebase.User
+            -> async usersession
+                -> receives new firebase.User event
+                -> processes user
+                -> broadcasts start redirect
+
+
+
+
+    -> go to play now...
+        -> user session guard -> not initialized
+            -> broadcast new usersession redirect
+            -> reject route
+            -> async authservice
+                -> login anonymously
+                -> broadcast error { reset: false; redirect: login }                
+            -> async redirect queue
+                -> receive error 
+                -> clear queued redirects
+            -> async errors service
+                -> receive error 
+                -> show modal
+                -> redirect to home 

@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div *ngIf="showImgFrame" id="previousFrameImg" class="cards">
+        <div class="cards-header">
+            <h1>{{ mainMessage }}</h1>
+        </div>
+
+        <div class="cards-body">
+            <div id="img-box">  
+                <img id="img-frame" [src]="imgFrameUrl">
+            </div>  
+
+            <div id="guess-box">
+                <form [formGroup]="userGuessForm">
+                    <div class="md-form animated fadeIn" id="guess-input">
+                        <input id="guess" formControlName="guess" type="text" class="form-control">
+                        <label id="guess-label" for="guess">Enter a guess...</label>
+                        <div *ngIf="formErrors.guess" class="input-error"><small>{{ formErrors.guess }}</small></div>
+                    </div>
+                </form>
+            </div>
+            <button class="btn-lights" id="guess-btn" (click)="displayGuess()" type="submit">Display Guess</button>
+        </div>
+
+        <div class="cards-footer"></div>
+    </div>
+</div>

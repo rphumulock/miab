@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class=" col-11 col-lg-6 ">
+            <div class="card" id="profile-card">
+                <div class="card-header" id="profile-header">
+                    <div class="row">
+                    </div> 
+                </div>
+                <div class="avatar">
+                    <img src="http://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png" class="rounded-circle" id="profile-avatar">
+                </div>
+                <div class="card-body" id="profile-body">
+                    <div *ngIf="authService.loggedIn">
+                        <div id="profile-user">
+                            <p>Your logged in as:</p>
+                            <h2>{{ loggedInUser }}</h2>
+                        </div>
+                    </div>
+                    <div class="card-row" id="btn-row">
+                        <div class="col-6 d-inline">
+                            <button class="btn btn-block waves-effect" id="logout-btn" (click)="logOut()">Log Out</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                </div>
+            </div>
+            <div *ngIf="!userSession.isAnonymous" class="card" id="profile-upgrade">
+                <div class="card-header">
+                </div>
+                <div class="card-block">
+                    <div class="row card-row">
+                        <p>{{ linkAccountMessage }}</p>
+                        <form role="form" [formGroup]="guestAccountForm" novalidate>
+                            <div class="form-content text-center animated zoomIn">
+                                <input id="permlink" formControlName="permlink" type="text" placeholder="Enter Permlink Code..." class="form-control" required>
+                                <div *ngIf="formErrors.permlink" class="error">
+                                    <small>{{ formErrors.permlink }}</small>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div ngIf="linkGuestAcctService.canLinkGuestAccount()" class="row card-row">
+                        <div class="col">
+                            <button class="btn btn-block waves-effect" (click)="linkGuestAccountGames()">Link Games to Account</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

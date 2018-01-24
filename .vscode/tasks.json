@@ -1,0 +1,34 @@
+{
+    /// This file in conjuction with launch.json allows you
+    /// to debug node.js projects in visual studio code
+    /// for our custom default build environment
+    /// More info https://code.visualstudio.com/docs/editor/tasks
+    /// Author: Edwin Gathura - egathura@gmail.com
+    "version": "0.1.0",
+    "tasks": [
+        {
+            "taskName": "build",
+            "command": "npm",
+            "isShellCommand": true,
+            "args": [
+                "run",
+                "builddev"
+            ],
+            "showOutput": "always",
+            "echoCommand": true,
+            "suppressTaskName": true
+        },
+        {
+            "taskName": "warnDeveloper",
+            "command": "echo",
+            "isShellCommand": true,
+            "args": [
+                "To use this launch config, first start your webserver listening on port 3000",
+                "Check package.json for the webserver start configs..."
+            ],
+            "showOutput": "always",
+            "echoCommand": true,
+            "suppressTaskName": true
+        }
+    ]
+}
